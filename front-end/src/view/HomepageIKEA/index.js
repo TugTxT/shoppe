@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import productsList from "../../data/Products";
 import HomepageStyle from "../../styled/HomepageIKEA";
+import HoverCard from "../../component/util/HoverCard/HoverCard";
+import categories from "../../data/Categories";
 
 import Tippy from "@tippyjs/react/headless";
-import HoverCard from "../../component/util/HoverCard/HoverCard";
+import Slider from "react-slick";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import PopularCategories from "../../data/PopularCategories";
 
 const HomepageIKEA = () => {
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4.5,
+    slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    // beforeChange : (current,next) => setSlideIndex(next)
+  };
+
+  const [slide, setSlide] = useState();
+
   return (
     <HomepageStyle>
       <section>
@@ -33,7 +76,7 @@ const HomepageIKEA = () => {
                   interactive={true}
                   render={(attrs) => <HoverCard product={item} {...attrs} />}
                 >
-                  <div className="pub-teaser"></div>
+                  <div key={item.id} className="pub-teaser"></div>
                 </Tippy>
               ))}
             </span>
@@ -49,7 +92,7 @@ const HomepageIKEA = () => {
                   interactive={true}
                   render={(attrs) => <HoverCard product={item} {...attrs} />}
                 >
-                  <div className="pub-teaser"></div>
+                  <div key={item.id} className="pub-teaser"></div>
                 </Tippy>
               ))}
             </span>
@@ -65,7 +108,7 @@ const HomepageIKEA = () => {
                   interactive={true}
                   render={(attrs) => <HoverCard product={item} {...attrs} />}
                 >
-                  <div className="pub-teaser"></div>
+                  <div key={item.id} className="pub-teaser"></div>
                 </Tippy>
               ))}
             </span>
@@ -81,7 +124,7 @@ const HomepageIKEA = () => {
                   interactive={true}
                   render={(attrs) => <HoverCard product={item} {...attrs} />}
                 >
-                  <div className="pub-teaser"></div>
+                  <div key={item.id} className="pub-teaser"></div>
                 </Tippy>
               ))}
             </span>
@@ -97,11 +140,43 @@ const HomepageIKEA = () => {
                   interactive={true}
                   render={(attrs) => <HoverCard product={item} {...attrs} />}
                 >
-                  <div className="pub-teaser"></div>
+                  <div key={item.id} className="pub-teaser"></div>
                 </Tippy>
               ))}
             </span>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Shop our top categories</h2>
+      </section>
+      <div className="carousel">
+        <Slider ref={(c) => setSlide(c)} {...settings}>
+          {categories.map((item) => (
+            <div>
+              <a href={`/ikea/categories/${item.name}`}>
+                <img alt="" src={item.attachment} />
+                <span>{item.name}</span>
+              </a>
+            </div>
+          ))}
+        </Slider>
+        <div className="btn-arrow">
+          <LeftOutlined onClick={() => slide.slickPrev()} />
+          <RightOutlined onClick={() => slide.slickNext()} />
+        </div>
+      </div>
+
+      <section>
+        <h2>Popular categories</h2>
+        <div className="categories-grid">
+          {PopularCategories.map((item) => (
+            <div className="category-card">
+              <img alt="" src={item.attachment} />
+              <span>{item.name}</span>
+            </div>
+          ))}
         </div>
       </section>
     </HomepageStyle>
