@@ -147,6 +147,7 @@ const HomePage = styled.div`
         }
       }
       .action_button {
+        z-index: 10;
         cursor: pointer;
         transition: 0.1s ease-in-out;
         border-top: 1px solid rgba(17, 17, 17, 0.3);
