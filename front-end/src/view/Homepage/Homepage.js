@@ -39,7 +39,7 @@ const Homepage = () => {
           </a>
         </div>
         <div className={`banner_2 ${open ? "open" : "close"}`}>
-          <a className="banner_item" href="/">
+          <a className="banner_item" href="/ikea">
             <span>Go shopping</span>
             <ArrowRightOutlined />
           </a>
