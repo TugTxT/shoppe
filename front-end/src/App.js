@@ -7,6 +7,9 @@ import NavbarIKEA from "./view/NavbarIKEA";
 import HomepageIKEA from "./view/HomepageIKEA";
 import Banner from "./view/Banner/Banner";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <Router>

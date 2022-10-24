@@ -3,8 +3,14 @@ import styled from "styled-components";
 const Homepage = styled.div`
   margin-left: 110px;
   margin-right: 40px;
-  margin-top: 4rem;
   section {
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.45;
+      margin-top: 0;
+      margin-bottom: 0px;
+    }
+    margin-top: 4rem;
     .pub-teaser-header {
       display: flex;
       position: relative;
@@ -195,6 +201,109 @@ const Homepage = styled.div`
             }
           }
         }
+      }
+    }
+    .categories-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 20px;
+      .category-card {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        width: 10.75rem;
+        &:hover {
+          span {
+            text-decoration: underline;
+          }
+        }
+        img {
+          width: 87%;
+          height: 87%;
+          object-fit: contain;
+        }
+        span {
+          padding-top: 0.5rem;
+          text-align: center;
+          font-weight: 400;
+          color: #484848;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  .carousel {
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+      a {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-decoration: none;
+        color: #111;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 231px;
+          object-fit: cover;
+        }
+        span {
+          margin: 0;
+          min-height: 2.5rem;
+          min-width: fit-content;
+          max-width: 50%;
+          text-align: center;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 0 1.5rem;
+          background: #fff;
+          border-radius: 64px;
+          position: absolute;
+          bottom: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            background: #f5f5f5;
+          }
+        }
+      }
+    }
+    &:hover {
+      .btn-arrow {
+        visibility: visible;
+      }
+    }
+    .btn-arrow {
+      width: 101%;
+      visibility: hidden;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 45%;
+      .anticon {
+        color: #fff;
+        height: 14px;
+        width: 14px;
+        padding: 8px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #111;
+        z-index: 20;
+        cursor: pointer;
       }
     }
   }
