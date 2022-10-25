@@ -9,6 +9,7 @@ import Banner from "./view/Banner/Banner";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FooterIKEA from "./view/FooterIKEA";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <NavbarIKEA />
               <Banner />
               <HomepageIKEA />
+              <FooterIKEA />
             </div>
           }
         />
