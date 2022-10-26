@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavbarIKEAStyle from "../../styled/NavbarIKEA";
 import truck from "../../assets/svgIcons/truck.svg";
 import shopping_bag from "../../assets/svgIcons/shopping_bag.svg";
@@ -8,19 +8,26 @@ import atlanta from "../../assets/svgIcons/atlanta.svg";
 
 import {
   CameraOutlined,
+  CloseOutlined,
+  GlobalOutlined,
   MenuOutlined,
+  RightOutlined,
   SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 
 const NavbarIKEA = () => {
+  const [appear, setAppear] = useState(false);
+
+  const [sliderBar, setSliderBar] = useState(false);
+
   return (
     <NavbarIKEAStyle>
       <div className="menu-hambuger-container">
         <div className="menu-hambuger-inner">
           <div className="menu-hambuger">
             <span>
-              <MenuOutlined />
+              <MenuOutlined onClick={() => setAppear(true)} />
             </span>
             <span>Menu</span>
           </div>
@@ -50,13 +57,11 @@ const NavbarIKEA = () => {
                 </div>
               </div>
               <ul className="header-icons">
-                <li>
-                  <a href="/ikea">
-                    <span>
-                      <UserOutlined />
-                    </span>
-                    <span>Hej! Log in or sign up</span>
-                  </a>
+                <li onClick={() => setSliderBar(true)}>
+                  <span>
+                    <UserOutlined />
+                  </span>
+                  <span>Hej! Log in or sign up</span>
                 </li>
                 <li>
                   <span>
@@ -109,6 +114,120 @@ const NavbarIKEA = () => {
             </div>
           </div>
         </nav>
+      </div>
+
+      <div
+        onClick={() => {
+          setAppear(false);
+          setSliderBar(false);
+        }}
+        className={`sidebar-layer ${appear || sliderBar ? "appear" : ""}`}
+      ></div>
+      <aside className={`${appear ? "appear" : ""}`}>
+        <div className="sidebar-top">
+          <span>
+            <CloseOutlined onClick={() => setAppear(false)} />
+          </span>
+          <div className="sidebar-logo">
+            <a href="/ikea">
+              <img
+                alt=""
+                src="https://www.ikea.com/us/en/static/ikea-logo.f7d9229f806b59ec64cb.svg"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="sidebar-body">
+          <nav>
+            <ul>
+              {[
+                "Products",
+                "Home Accessories",
+                "Rooms",
+                "Designs",
+                "Deals",
+              ].map((item, index) => (
+                <li key={index}>
+                  <a href={`/ikea/${item}`}>{item}</a>
+                </li>
+              ))}
+            </ul>
+            <ul>
+              {[
+                "New at IKEA",
+                "Ideas & Inspiration",
+                "Gift Ideas",
+                "IKEA Family",
+                "IKEA Gift Registry",
+                "IKEA food & swedish restaurant",
+              ].map((item, index) => (
+                <li key={index}>
+                  <a href={`/ikea/${item}`}>{item}</a>
+                </li>
+              ))}
+            </ul>
+            <ul>
+              {[
+                "My profile",
+                "My orders",
+                "Find your IKEA location",
+                "IKEA Gift Card",
+                "IKEA Credit Card",
+                "IKEA For Business",
+                "Customer Service",
+                "Services",
+              ].map((item, index) => (
+                <li key={index}>
+                  <a href={`/ikea/${item}`}>{item}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="side-button">
+          <a href="/ikea">
+            <GlobalOutlined />
+            <span>Change country</span>
+          </a>
+        </div>
+      </aside>
+
+      <div
+        style={{
+          transform: `${sliderBar ? "translate(0px)" : "translate(480px)"}`,
+        }}
+        className="function-slider"
+      >
+        <section className="slider-header">
+          <CloseOutlined onClick={() => setSliderBar(false)} />
+          <div className="header-content">
+            <h2>Hej</h2>
+            <a href="/login">
+              <span>Sign in</span>
+            </a>
+          </div>
+          <div className="header-link">
+            <a href="/sign-up">
+              <span>Create an IKEA account</span>
+              <RightOutlined />
+            </a>
+          </div>
+        </section>
+        <section className="slider-body">
+          <ul>
+            {[
+              "My designs & rooms",
+              "Purchase history",
+              "Shopping list",
+              "Planners",
+              "Track your order",
+            ].map((item, index) => (
+              <li key={index}>
+                <a href={`/ikea/${item}`}>{item}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </NavbarIKEAStyle>
   );
