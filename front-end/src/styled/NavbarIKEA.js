@@ -161,8 +161,7 @@ const NavbarIKEA = styled.div`
                   }
                 }
               }
-              a {
-                text-decoration: none;
+              &:nth-child(1) {
                 color: black;
                 font-weight: 600;
                 line-height: 1.3333333333;
@@ -171,6 +170,7 @@ const NavbarIKEA = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
                 .anticon-user {
                   margin-right: 5px;
                 }
@@ -238,6 +238,255 @@ const NavbarIKEA = styled.div`
           }
           &:hover {
             text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-layer {
+    display: block;
+    position: fixed;
+    z-index: 7999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.25;
+    pointer-events: all;
+    will-change: opacity;
+    display: none;
+    transition: 0.3s ease-in-out;
+  }
+  .appear {
+    transform: translateX(0px);
+    display: block;
+  }
+  aside {
+    transition: 0.3s ease-in-out;
+    position: fixed;
+    transform: translateX(-480px);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px;
+    z-index: 8000;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* transform: translateX(0);
+    transition: transform 200ms 0s; */
+    .sidebar-top {
+      padding: 1.25rem 1.875rem;
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 1;
+      justify-content: flex-start;
+      span {
+        margin-left: 18px;
+        .anticon {
+          padding-left: 0px;
+          cursor: pointer;
+        }
+      }
+      .sidebar-logo {
+        padding-left: 70px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+    .sidebar-body {
+      padding-left: 150px;
+      padding-right: 32px;
+      nav {
+        ul {
+          padding: 0;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+              color: #111;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+          &:nth-child(1) {
+            font-size: 2.25rem;
+            letter-spacing: -0.04rem;
+            font-weight: 700;
+            li {
+              margin-bottom: 1.5rem;
+            }
+          }
+          &:nth-child(2) {
+            font-size: 0.875rem;
+            font-weight: 700;
+            li {
+              margin-bottom: 1.5rem;
+            }
+          }
+          &:nth-child(3) {
+            font-size: 0.875rem;
+            padding-top: 1rem;
+            font-weight: 400;
+            li {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .side-button {
+      padding: 2rem 1rem 1.5rem 140px;
+      a {
+        text-decoration: none;
+        color: #111;
+        color: #484848;
+        padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+        border-radius: 20px;
+        border: 1px solid #dfdfdf;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        white-space: nowrap;
+        &:hover {
+          color: #111;
+          border-color: #929292;
+        }
+        .anticon {
+          font-size: 1rem;
+          margin-right: 5px;
+          transform: translateY(2px);
+        }
+      }
+    }
+  }
+  .function-slider {
+    transition: 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 480px;
+    background: #fff;
+    z-index: 9001;
+    overflow-y: auto;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    text-align: left;
+    transform: translateX(480px);
+    .slider-header {
+      background: #0058a3;
+      color: #fff;
+      position: relative;
+      .anticon-close {
+        position: absolute;
+        top: 1.5625rem;
+        right: 2.3125rem;
+        font-size: 1rem;
+        line-height: 1.3333333333;
+        font-weight: bold;
+        text-align: center;
+        color: #111;
+        padding: 0.75rem;
+        display: inline-flex;
+        border-radius: 50%;
+        background: #fff;
+        cursor: pointer;
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+      .header-content {
+        padding: 7.5rem 3rem 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2 {
+          font-size: 2.25rem;
+          line-height: 1.333;
+          letter-spacing: -0.0063em;
+          margin-right: 0.5rem;
+          margin: 0;
+        }
+        a {
+          text-decoration: none;
+          color: #111;
+          span {
+            font-size: 0.75rem;
+            line-height: 1.3333333333;
+            background: #fff;
+            border-radius: 64px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1.5rem;
+            font-weight: 700;
+            min-height: 2.5rem;
+            &:hover {
+              background: #f5f5f5;
+            }
+          }
+        }
+      }
+      .header-link {
+        padding: 1.25rem 3rem;
+        border-top: 1px solid #007cc1;
+        a {
+          text-decoration: none;
+          color: #fff;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 700;
+          &:hover {
+            text-decoration: underline;
+          }
+          .anticon {
+            font-size: 1rem;
+            line-height: 1.3333333333;
+            font-weight: bold;
+            text-align: center;
+            color: #111;
+            padding: 0.75rem;
+            display: inline-flex;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            &:hover {
+              background: #f5f5f5;
+            }
+          }
+        }
+      }
+    }
+    .slider-body {
+      padding: 2.5rem 3rem;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style: none;
+          margin: 0;
+          margin-bottom: 1.25rem;
+          a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 400;
+            font-size: 0.875rem;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
