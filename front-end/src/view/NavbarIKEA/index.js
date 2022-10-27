@@ -19,7 +19,29 @@ import {
 const NavbarIKEA = () => {
   const [appear, setAppear] = useState(false);
 
+  const [navbar, setNavbar] = useState("");
+
   const [sliderBar, setSliderBar] = useState(false);
+
+  const [y, setY] = useState(window.scrollY);
+
+  const appearNavbar = (e) => {
+    if (window.scrollY > 500) {
+      const window = e.currentTarget;
+      if (y > window.scrollY) {
+        setNavbar("active");
+      } else if (y < window.scrollY) {
+        if (navbar) {
+          setNavbar("hide");
+        }
+      }
+      setY(window.scrollY);
+    } else {
+      setNavbar("");
+    }
+  };
+
+  window.addEventListener("scroll", (e) => appearNavbar(e));
 
   return (
     <NavbarIKEAStyle>
@@ -33,7 +55,18 @@ const NavbarIKEA = () => {
           </div>
         </div>
       </div>
-      <header>
+
+      <header
+        className={`${
+          window.scrollY > 500
+            ? navbar === "active"
+              ? "active"
+              : navbar === "hide"
+              ? "hide"
+              : ""
+            : ""
+        }`}
+      >
         <div className="header-container">
           <div className="header-container-inner">
             <div className="header-container-main">
@@ -84,6 +117,7 @@ const NavbarIKEA = () => {
           </div>
         </div>
       </header>
+
       <div className="navbar">
         <nav>
           <ul className="nav-list">

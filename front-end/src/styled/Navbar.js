@@ -9,6 +9,10 @@ const Navbar = styled.nav`
   box-sizing: border-box;
   /* position: fixed; */
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
 `;
 
 const NavbarSticky = styled.div`

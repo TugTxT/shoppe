@@ -5,7 +5,7 @@ const NavbarIKEA = styled.div`
     display: block;
     position: sticky;
     width: 100%;
-    z-index: 100;
+    z-index: 200;
     pointer-events: none;
     .menu-hambuger-inner {
       position: absolute;
@@ -44,9 +44,22 @@ const NavbarIKEA = styled.div`
       }
     }
   }
-  header {
+  .active {
+    transform: translateY(0);
+    position: fixed;
+    top: 0;
     z-index: 100;
+  }
+  .hide {
+    transform: translateY(-90px);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  header {
+    display: block;
     background-color: #fff;
+    transition: 1s;
     .header-container {
       max-width: 112rem;
       margin: 0 auto;
