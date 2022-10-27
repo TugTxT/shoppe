@@ -33,21 +33,21 @@ const Homepage = () => {
               src="https://www.ikea.com/global/en/images/PH_186334_87409ee9fa.jpg?f=xxl"
             />
             <div className="banner_content">
-              <p>Just dropped</p>
-              <h1>Swedish House Mafia collab</h1>
+              <p>Lắng nghe</p>
+              <h1>Waiting for you - Mono</h1>
             </div>
           </a>
         </div>
         <div className={`banner_2 ${open ? "open" : "close"}`}>
-          <a className="banner_item" href="/ikea">
-            <span>Go shopping</span>
+          <a className="banner_item" href="/furnituno">
+            <span>Mua sắm</span>
             <ArrowRightOutlined />
           </a>
           {
             <div className="action_search banner_item">
               <div className="search_store">
                 {/* <label htmlFor="search-input"></label> */}
-                <input id="search-input" placeholder="Find online store" />
+                <input id="search-input" placeholder="Tìm kiếm trực tuyến" />
                 <span>
                   <SearchOutlined />
                 </span>
@@ -59,7 +59,7 @@ const Homepage = () => {
             className="action_button banner_item"
           >
             <span>
-              Online store: <strong>IKEA International Sales</strong>
+              Cửa hàng trực tuyến: <strong>Furnituno</strong>
             </span>
             <span style={{ marginLeft: "10px" }}>
               <UpOutlined />

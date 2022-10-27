@@ -5,6 +5,7 @@ import shopping_bag from "../../assets/svgIcons/shopping_bag.svg";
 import heart from "../../assets/svgIcons/heart.svg";
 import zip_code from "../../assets/svgIcons/zip-code.svg";
 import atlanta from "../../assets/svgIcons/atlanta.svg";
+import logo from "../../assets/images/logo.png";
 
 import {
   CameraOutlined,
@@ -71,11 +72,8 @@ const NavbarIKEA = () => {
           <div className="header-container-inner">
             <div className="header-container-main">
               <div className="header-logo">
-                <a href="/ikea">
-                  <img
-                    alt=""
-                    src="https://www.ikea.com/us/en/static/ikea-logo.f7d9229f806b59ec64cb.svg"
-                  />
+                <a href="/furnituno">
+                  <img alt="" src={logo} />
                 </a>
               </div>
               <div className="header-search">
@@ -83,7 +81,7 @@ const NavbarIKEA = () => {
                   <span style={{ left: "30px" }}>
                     <SearchOutlined />
                   </span>
-                  <input placeholder="What are you looking for?" />
+                  <input placeholder="Bạn đang cần tìm gì?" />
                   <span style={{ right: "40px" }}>
                     <CameraOutlined />
                   </span>
@@ -94,7 +92,7 @@ const NavbarIKEA = () => {
                   <span>
                     <UserOutlined />
                   </span>
-                  <span>Hej! Log in or sign up</span>
+                  <span>Đăng nhập hoặc đăng kí</span>
                 </li>
                 <li>
                   <span>
@@ -122,29 +120,29 @@ const NavbarIKEA = () => {
         <nav>
           <ul className="nav-list">
             <li>
-              <a href="/">Products</a>
+              <a href="/furnituno/all-products">Sản phẩm</a>
             </li>
             <li>
-              <a href="/">Home Accessories</a>
+              <a href="/">Vật dụng trong nhà</a>
             </li>
             <li>
-              <a href="/">Rooms</a>
+              <a href="/">Phòng</a>
             </li>
             <li>
-              <a href="/">Designs</a>
+              <a href="/">Thiết kế</a>
             </li>
             <li>
-              <a href="/">Deals</a>
+              <a href="/">Giao dịch</a>
             </li>
           </ul>
           <div className="navigation-container">
             <div className="nav-item">
               <img alt="" src={atlanta} />
-              <span>Atlanta</span>
+              <span>Việt Nam</span>
             </div>
             <div className="nav-item">
               <img alt="" src={zip_code} />
-              <span>Enter ZIP Code</span>
+              <span>Nhập mã ZIP </span>
             </div>
           </div>
         </nav>
@@ -163,10 +161,11 @@ const NavbarIKEA = () => {
             <CloseOutlined onClick={() => setAppear(false)} />
           </span>
           <div className="sidebar-logo">
-            <a href="/ikea">
+            <a href="/furnituno">
               <img
+                style={{ width: "170px", height: "80px" }}
                 alt=""
-                src="https://www.ikea.com/us/en/static/ikea-logo.f7d9229f806b59ec64cb.svg"
+                src={logo}
               />
             </a>
           </div>
@@ -175,53 +174,44 @@ const NavbarIKEA = () => {
           <nav>
             <ul>
               {[
-                "Products",
-                "Home Accessories",
-                "Rooms",
-                "Designs",
-                "Deals",
+                "Sản phẩm",
+                "Vật dụng trong nhà",
+                "Phòng",
+                "Thiết kế",
+                "Giao dịch",
               ].map((item, index) => (
                 <li key={index}>
-                  <a href={`/ikea/${item}`}>{item}</a>
+                  <a href={`/furnituno/${item}`}>{item}</a>
                 </li>
               ))}
             </ul>
             <ul>
-              {[
-                "New at IKEA",
-                "Ideas & Inspiration",
-                "Gift Ideas",
-                "IKEA Family",
-                "IKEA Gift Registry",
-                "IKEA food & swedish restaurant",
-              ].map((item, index) => (
-                <li key={index}>
-                  <a href={`/ikea/${item}`}>{item}</a>
-                </li>
-              ))}
+              {["Thông tin mới", "Ý tưởng", "Quà tặng", "Cộng đồng"].map(
+                (item, index) => (
+                  <li key={index}>
+                    <a href={`/furnituno/${item}`}>{item}</a>
+                  </li>
+                )
+              )}
             </ul>
             <ul>
               {[
-                "My profile",
-                "My orders",
-                "Find your IKEA location",
-                "IKEA Gift Card",
-                "IKEA Credit Card",
-                "IKEA For Business",
-                "Customer Service",
-                "Services",
+                "Hồ sơ",
+                "Đơn hàng",
+                "Vị trí cửa hàng",
+                "Dịch vụ khách hàng",
               ].map((item, index) => (
                 <li key={index}>
-                  <a href={`/ikea/${item}`}>{item}</a>
+                  <a href={`/furnituno/${item}`}>{item}</a>
                 </li>
               ))}
             </ul>
           </nav>
         </div>
         <div className="side-button">
-          <a href="/ikea">
+          <a href="/furnituno">
             <GlobalOutlined />
-            <span>Change country</span>
+            <span>Quốc gia</span>
           </a>
         </div>
       </aside>
@@ -235,14 +225,14 @@ const NavbarIKEA = () => {
         <section className="slider-header">
           <CloseOutlined onClick={() => setSliderBar(false)} />
           <div className="header-content">
-            <h2>Hej</h2>
+            <h2>Hola</h2>
             <a href="/login">
-              <span>Sign in</span>
+              <span>Đăng nhập</span>
             </a>
           </div>
           <div className="header-link">
             <a href="/sign-up">
-              <span>Create an IKEA account</span>
+              <span>Tạo tài khoản Furnituno</span>
               <RightOutlined />
             </a>
           </div>
@@ -250,11 +240,11 @@ const NavbarIKEA = () => {
         <section className="slider-body">
           <ul>
             {[
-              "My designs & rooms",
-              "Purchase history",
-              "Shopping list",
-              "Planners",
-              "Track your order",
+              "Thiết kế của tôi",
+              "Lịch sử mua hàng",
+              "Danh sách mua sắm",
+              "Kế hoạch",
+              "Theo dõi đơn hàng",
             ].map((item, index) => (
               <li key={index}>
                 <a href={`/ikea/${item}`}>{item}</a>

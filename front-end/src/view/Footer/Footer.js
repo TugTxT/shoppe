@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import FooterStyle from "../../styled/Footer";
+import logo from "../../assets/images/logo.png";
 const Footer = () => {
   const [switchLight, setSwitchLight] = useState(false);
   return (
     <FooterStyle>
       <div className="top_content">
-        <h3>A world of inspiration for your home</h3>
-        <img alt="" src="https://www.ikea.com/global/en/images/ikea-logo.svg" />
+        <h3>Niềm cảm hứng bất tận cho ngôi nhà của bạn</h3>
+        <img alt="" src={logo} />
       </div>
       <div className="room_container">
         <div className="room_images">
@@ -50,22 +51,21 @@ const Footer = () => {
       </div>
       <div className="bottom_content">
         <div className="links">
-          <a href="/">International sales</a>
-          <a href="/">About IKEA</a>
-          <a href="/">IKEA Museum</a>
-          <a href="/">Work with us</a>
-          <a href="/">Ethics & Integrity</a>
+          <a href="/">Mua sắm đa quốc gia</a>
+          <a href="/">Về chúng tôi</a>
+          <a href="/">Làm việc với chúng tôi</a>
+          <a href="/">Đạo đức & Sự toàn vẹn</a>
         </div>
         <div className="end_copy">
           <div className="cookie_privacy">
             <a href="/">Cookie Information</a>
-            <a href="/">Privacy statement</a>
+            <a href="/">Policy statement</a>
           </div>
           <div className="copyright">
-            <p>© Inter IKEA Systems B.V. 1999 - 2022</p>
+            <p>© Copyright by Sinha2k . th 10 - 2022</p>
           </div>
           <div className="co_worker">
-            <a href="/">Co-worker login</a>
+            <a href="/">Đăng nhập</a>
           </div>
         </div>
       </div>
