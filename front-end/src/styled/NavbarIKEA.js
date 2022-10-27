@@ -82,9 +82,15 @@ const NavbarIKEA = styled.div`
             display: block;
             padding-top: 0.9375rem;
             padding-bottom: 0.9375rem;
+            a {
+              img {
+                width: 120px;
+                height: 40px;
+              }
+            }
           }
           .header-search {
-            width: 53%;
+            width: 50%;
             padding-left: 40px;
             .search-field {
               position: relative;
@@ -322,6 +328,7 @@ const NavbarIKEA = styled.div`
       nav {
         ul {
           padding: 0;
+          margin-top: 0;
           li {
             list-style: none;
             a {

@@ -88,14 +88,14 @@ const HomepageIKEA = () => {
       <section>
         <div className="pub-teaser-header">
           <div className="pub-teaser-info">
-            <h2>Cozy up your living room for fall!</h2>
+            <h2>Làm ấm căn phòng của bạn trong mùa thu này!</h2>
             <p>
-              Give your space an affordable autumn refresh with comfy seating,
-              warm lights and fresh textiles.
+              Mang đến cho không gian của bạn sự sảng khoái vào mùa thu với giá
+              cả phải chăng, chỗ ngồi thoải mái và ánh sáng ấm áp.
             </p>
           </div>
           <div>
-            <a href="/ikea">Shop living room</a>
+            <a href="/ikea">Phòng khách</a>
           </div>
         </div>
         <div className="pub-teaser-body">
@@ -183,7 +183,7 @@ const HomepageIKEA = () => {
       </section>
 
       <section>
-        <h2>Shop our top categories</h2>
+        <h2>Hạng mục hàng đầu</h2>
       </section>
       <div className="carousel">
         <Slider ref={(c) => setSlide(c)} {...settings}>
@@ -203,7 +203,7 @@ const HomepageIKEA = () => {
       </div>
 
       <section>
-        <h2>Popular categories</h2>
+        <h2>Hạng mục phổ biến</h2>
         <div className="categories-grid">
           {PopularCategories.map((item) => (
             <div className="category-card">
@@ -215,11 +215,11 @@ const HomepageIKEA = () => {
       </section>
 
       <section>
-        <h2>As seen on Instagram</h2>
+        <h2>Furnituno trên Instagram</h2>
         <p>
-          See how our products look in real homes! Share your photos on
-          Instagram with #MyIKEAUSA or tag @IKEAUSA for a chance to be seen
-          here!
+          Xem sản phẩm của chúng tôi trông như thế nào trong nhà thực tế! Chia
+          sẻ ảnh của bạn trên Instagram với #MyFurnituno hoặc gắn thẻ @Furnituno
+          để có cơ hội được mọi người nhìn thấy tại đây!
         </p>
       </section>
       <div className="carousel instagram">
@@ -242,40 +242,46 @@ const HomepageIKEA = () => {
       </div>
 
       <section>
-        <h2>Services to help you shop</h2>
+        <h2>Dịch vụ</h2>
         <div className="services-container">
           <div className="service-items">
             <img alt="" src={delivery} />
-            <h3>Delivery</h3>
-            <p>Shop from home and get it delivered to your front door.</p>
-            <a href="/ikea">Learn more</a>
+            <h3>Vận chuyển</h3>
+            <p>Mua sắm tại nhà và nhận ngay trước cửa.</p>
+            <a href="/ikea">Xem thêm</a>
           </div>
           <div className="service-items">
             <img alt="" src={collect} />
-            <h3>Click & Collect</h3>
-            <p>Buy online, pick-up in store.</p>
-            <a href="/ikea">Learn more</a>
+            <h3>Nhấn & Sưu tầm</h3>
+            <p>Mua trực tuyến, lấy ở cửa hàng.</p>
+            <a href="/ikea">Xem thêm</a>
           </div>
           <div className="service-items">
             <img alt="" src={assembly} />
-            <h3>Taskrabbit Assembly</h3>
-            <p>Find flexible and affordable ways to get your to-dos done.</p>
-            <a href="/ikea">Learn more</a>
+            <h3>Hội đồng Furnituno</h3>
+            <p>
+              Tìm những cách linh hoạt và giá cả phải chăng để hoàn thành việc
+              của bạn.
+            </p>
+            <a href="/ikea">Xem thêm</a>
           </div>
           <div className="service-items">
             <img alt="" src={credit_card} />
-            <h3>Ways to pay</h3>
-            <p>Finance your dream home with our credit cards. </p>
-            <a href="/ikea">Learn more</a>
+            <h3>Phương thức thanh toán</h3>
+            <p>
+              Tài trợ cho ngôi nhà mơ ước của bạn bằng thẻ tín dụng của chúng
+              tôi.{" "}
+            </p>
+            <a href="/ikea">Xem thêm</a>
           </div>
         </div>
         <a className="service-button" href="/ikea">
-          <span>View all services</span>
+          <span>Xem các dịch vụ</span>
         </a>
       </section>
 
       <section>
-        <h2>Design inspiration and modern home ideas </h2>
+        <h2>Cảm hứng thiết kế và ý tưởng nhà hiện đại </h2>
         <div className="filter-bar">
           {Rooms.map((item, index) => (
             <span
@@ -296,41 +302,41 @@ const HomepageIKEA = () => {
           ))}
         </div>
         <div className="load-more">
-          <span>Load 12 more</span>
+          <span>Xem thêm</span>
         </div>
       </section>
 
       <section>
-        <h2>This is IKEA</h2>
+        <h2>Đây là Furnituno</h2>
         <div className="services-container introduction">
           <div className="service-items">
-            <h3>Sustainable everyday</h3>
+            <h3>Bền vững hàng ngày</h3>
             <p>
-              How sustainable is IKEA? Well, more sustainable every day. With
-              products like veggie hot dogs, and energy-saving solutions, we’re
-              paving the way for more sustainable homes for the many.{" "}
+              Furnituno bền vững như thế nào? Chà, bền vững hơn mỗi ngày. Với
+              các sản phẩm và các giải pháp tiết kiệm năng lượng, chúng tôi mở
+              đường cho những ngôi nhà bền vững hơn cho nhiều người.{" "}
             </p>
-            <a href="/ikea">Learn more</a>
+            <a href="/ikea">Xem thêm</a>
           </div>
           <div className="service-items">
-            <h3>Climate and environment</h3>
+            <h3>Khí hậu và môi trường</h3>
             <p>
-              Find out how IKEA invests, inspires and acts to tackle
-              environmental issues, reduce carbon footprints and drive positive
-              change on a global scale.
+              Tìm hiểu cách Furnituno đầu tư, truyền cảm hứng và hành động để
+              giải quyết các vấn đề môi trường, giảm lượng carbon và thay đổi
+              trên quy mô toàn cầu.
             </p>
-            <a href="/ikea">Learn more</a>
+            <a href="/ikea">Xem thêm</a>
           </div>
           <div className="service-items">
-            <h3>Work with us</h3>
+            <h3>Làm việc với chúng tôi</h3>
             <p>
-              Coming from all over the world, our IKEA co-workers share a
-              special set of values and a vision to enable people to live a
-              better, more sustainable everyday life. They come together within
-              diverse, inclusive, open IKEA work environments, where each of
-              them offers something unique.
+              Đến từ khắp nơi trên thế giới, các đồng nghiệp Furnituno của chúng
+              tôi chia sẻ bộ giá trị đặc biệt và tầm nhìn cho phép mọi người
+              sống cuộc sống hàng ngày tốt hơn, bền vững hơn. Họ đến với nhau
+              trong môi trường làm việc Furnituno đa dạng, toàn diện, cởi mở,
+              nơi mỗi người cung cấp một cái gì đó độc đáo.
             </p>
-            <a href="/ikea">Learn more</a>
+            <a href="/ikea">Xem thêm</a>
           </div>
         </div>
       </section>

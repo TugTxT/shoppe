@@ -13,69 +13,58 @@ const FooterIKEA = () => {
       <div className="footer-container">
         <div className="footer-links">
           <div className="features-links">
-            <h3>Join IKEA Family</h3>
+            <h3>Tham gia cộng đồng Furnituno </h3>
             <p>
-              Bring your ideas to life with special discounts, inspiration, and
-              lots of good things in store. It's all free.
+              Hãy biến những ý tưởng của bạn thành hiện thực với các chương
+              trình giảm giá, truyền cảm hứng đặc biệt và rất nhiều điều tốt
+              trong cửa hàng. Tất cả đều miễn phí.
             </p>
-            <p className="see-more">See more</p>
+            <p className="see-more">Xem thêm</p>
             <div>
               <a href="/ikea">
-                <span>Join or log in</span>
+                <span>Tham gia hoặc đăng nhập</span>
               </a>
             </div>
           </div>
           <div className="links-group">
             <ul>
               <li>
-                <h3>Help</h3>
+                <h3>Thông tin chung</h3>
                 <ul>
-                  <li>Customer service</li>
-                  <li>FAQ</li>
-                  <li>My orders</li>
-                  <li>Contact Us</li>
-                  <li>Product Recalls</li>
-                  <li>Return Policy</li>
-                  <li>Warranties</li>
-                  <li>Feedback</li>
+                  <li>Giới thiệu về CTY</li>
+                  <li>Tin tuyển dụng</li>
+                  <li>Liên hệ góp ý</li>
+                  <li>Khách hàng</li>
                 </ul>
               </li>
               <li>
-                <h3>Shop & Learn</h3>
+                <h3>Hỗ trợ khách hàng</h3>
                 <ul>
-                  <li>Find a Location</li>
-                  <li>IKEA Services</li>
-                  <li>IKEA Family</li>
-                  <li>IKEA Planning Tools</li>
-                  <li>IKEA Brochures</li>
-                  <li>IKEA Gift Registry</li>
-                  <li>Buying giudes</li>
-                  <li>Gift Cards</li>
-                  <li>IKEA Credit Card Management</li>
-                  <li>IKEA Credit Cards</li>
-                  <li>Explore the New IKEA App</li>
+                  <li>Hướng dẫn mua hàng trực tuyến</li>
+                  <li>Hướng dẫn thanh toán</li>
+                  <li>Hướng dẫn mua hàng trả góp</li>
+                  <li>In hóa đơn điện tử</li>
+                  <li>Tra cứu bảo hành</li>
                 </ul>
               </li>
               <li>
-                <h3>About IKEA</h3>
+                <h3>Chính sách chung</h3>
                 <ul>
-                  <li>This is IKEA</li>
-                  <li>Careers</li>
-                  <li>Newsroom</li>
-                  <li>Life at Home</li>
-                  <li>A Sustainable Everyday</li>
-                  <li>IKEA Foundation</li>
-                  <li>Creating Safer Homes Together</li>
+                  <li>Chính sách vẫn chuyển</li>
+                  <li>Chính sách bảo hành</li>
+                  <li>Chính sách cho doanh nghiệp</li>
+                  <li>Chính sách hàng chính hãng</li>
+                  <li>Bảo mật thông tin khách hàng</li>
                 </ul>
               </li>
               <li>
-                <h3>Legal</h3>
+                <h3>Cửa hàng & Liên hệ</h3>
                 <ul>
-                  <li>Privacy & Security</li>
-                  <li>Privacy policy</li>
-                  <li>Terms and conditions</li>
-                  <li>IKEA Children’s Product Registration</li>
-                  <li>IKEA SMÅLAND Privacy notice</li>
+                  <li>Email: noithat@gmail.com</li>
+                  <li>Chi nhánh 1: Hà Nội</li>
+                  <li>Chi nhánh 2: New York</li>
+                  <li>Chi nhánh 3: London</li>
+                  <li>Hotline: 4953</li>
                 </ul>
               </li>
             </ul>

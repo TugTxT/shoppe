@@ -1,16 +1,16 @@
 const Rooms = [
-  "All",
-  "Bedroom",
-  "Livingroom",
-  "Kitchen",
-  "Workspace",
-  "Outdoor",
-  "Bathroom",
-  "Kids room",
-  "Dining room",
-  "Hallway",
-  "Laundry",
-  "Bundles",
+  "Tất cả",
+  "Phòng ngủ",
+  "Phòng khách",
+  "Phòng bếp",
+  "Phòng làm việc",
+  "Ngoài trời",
+  "Phòng tắm",
+  "Phòng trẻ",
+  "Phòng ăn",
+  "Hành lang",
+  "Phòng giặt ủi",
+  "Không gian chung",
 ];
 
 export default Rooms;

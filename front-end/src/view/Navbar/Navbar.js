@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/svgIcons/logo.svg";
+import logo from "../../assets/images/logo-2.png";
 import { Navbar as NavbarStyle } from "../../styled/Navbar";
 import { NavbarSticky as NavSticky } from "../../styled/Navbar";
 

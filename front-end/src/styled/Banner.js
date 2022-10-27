@@ -16,7 +16,7 @@ const Banner = styled.div`
   }
   h2 {
     font-size: 2.25rem;
-    line-height: 0.95;
+    line-height: 1.2;
   }
   .banner-button {
     display: flex;
