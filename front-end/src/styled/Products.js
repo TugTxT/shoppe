@@ -69,8 +69,6 @@ const Products = styled.div`
         z-index: 99;
         background: #fff;
         .active {
-          border-color: #111;
-          background: #dfdfdf;
           .anticon {
             transform: rotate(180deg);
           }

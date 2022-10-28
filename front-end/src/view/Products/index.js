@@ -82,6 +82,11 @@ const ProductsPage = () => {
                 }}
               >
                 <button
+                  style={
+                    filter === item.name
+                      ? { borderColor: "#111", background: "#dfdfdf" }
+                      : {}
+                  }
                   className={`filter-bar-button ${
                     filter === item.name ? "active" : ""
                   }`}

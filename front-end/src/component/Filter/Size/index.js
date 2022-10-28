@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { UpOutlined } from "@ant-design/icons";
@@ -37,6 +37,7 @@ const Style = styled.div`
               text-align: left;
               flex-grow: 1;
               line-height: 0;
+              margin-right: 60px;
             }
           }
         }
@@ -141,6 +142,13 @@ const Style = styled.div`
 `;
 
 const Size = ({ value }) => {
+  const [sizeValue, setSizeValue] = useState({
+    "Chiều rộng": "",
+    "Chiều cao": "",
+    "Chiều sâu": "",
+    "Chiều dài": "",
+  });
+
   const sizeArray = (max) => {
     let array = [];
     for (let i = 0; i <= max; i += max / 4) {
@@ -156,17 +164,36 @@ const Size = ({ value }) => {
         {value.map((item) => (
           <li key={item.id}>
             <div className="size-heading">
-              <button>
+              <button
+                onClick={() =>
+                  sizeValue[item.name]
+                    ? setSizeValue({ ...sizeValue, [item.name]: "" })
+                    : setSizeValue({ ...sizeValue, [item.name]: item.name })
+                }
+              >
                 <span>{item.name}</span>
-                <UpOutlined />
+                <UpOutlined
+                  style={
+                    sizeValue[item.name] ? { transform: "rotate(180deg)" } : {}
+                  }
+                />
               </button>
             </div>
-            <div className="size-body">
+            <div
+              style={
+                sizeValue[item.name]
+                  ? { height: "auto", display: "block" }
+                  : { height: "0%", display: "none" }
+              }
+              className="size-body"
+            >
               {sizeArray(item.maximum).map((size, index) => (
                 <label key={index}>
                   <span className="label-text">
                     <span>
-                      {size.min} - {size.max} "
+                      {size.min === item.maximum
+                        ? `${size.min}+"`
+                        : `${size.min} - ${size.max}"`}
                     </span>
                     <span>1000</span>
                   </span>
