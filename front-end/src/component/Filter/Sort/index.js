@@ -61,7 +61,7 @@ const SortStyle = styled.div`
 `;
 
 const Sort = ({ value }) => {
-  const [sortValue, setSortValue] = useState("Best match");
+  const [sortValue, setSortValue] = useState("Phù hợp nhất");
 
   return (
     <SortStyle>
