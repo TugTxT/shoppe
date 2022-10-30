@@ -62,7 +62,7 @@ const Filters = [
       "Yellow",
       "Pink",
       "Orange",
-      "Lilac",
+      "Purple",
     ],
   },
   {

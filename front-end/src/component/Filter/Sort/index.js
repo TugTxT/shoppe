@@ -60,26 +60,46 @@ const SortStyle = styled.div`
   }
 `;
 
-const Sort = ({ value }) => {
+const Sort = ({ value, type, setFilterValue, filterValue }) => {
   const [sortValue, setSortValue] = useState("Phù hợp nhất");
 
   return (
     <SortStyle>
       <div>
-        {value.map((item, index) => (
-          <label key={index} className="radio-button">
-            <span>{item}</span>
-            <div className="radio">
-              <input
-                onChange={(e) => setSortValue(e.target.value)}
-                value={item}
-                checked={sortValue === item}
-                type="radio"
-              />
-              <span className="radio-symbol"></span>
-            </div>
-          </label>
-        ))}
+        {type === "Sắp xếp"
+          ? value.map((item, index) => (
+              <label key={index} className="radio-button">
+                <span>{item}</span>
+                <div className="radio">
+                  <input
+                    onChange={(e) => setSortValue(e.target.value)}
+                    value={item}
+                    checked={sortValue === item}
+                    type="radio"
+                  />
+                  <span className="radio-symbol"></span>
+                </div>
+              </label>
+            ))
+          : value.map((item, index) => (
+              <label key={index} className="radio-button">
+                <span>{item.name}</span>
+                <div className="radio">
+                  <input
+                    onChange={(e) =>
+                      setFilterValue({
+                        ...filterValue,
+                        categories: e.target.value,
+                      })
+                    }
+                    value={item.name}
+                    checked={filterValue["categories"] === item.name}
+                    type="radio"
+                  />
+                  <span className="radio-symbol"></span>
+                </div>
+              </label>
+            ))}
       </div>
     </SortStyle>
   );

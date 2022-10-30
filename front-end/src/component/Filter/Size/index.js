@@ -32,6 +32,11 @@ const Style = styled.div`
           border: none;
           outline: none;
           font-weight: 700;
+          &:hover {
+            span {
+              text-decoration: underline;
+            }
+          }
           span {
             &:nth-child(1) {
               text-align: left;
@@ -141,21 +146,65 @@ const Style = styled.div`
   }
 `;
 
-const Size = ({ value }) => {
-  const [sizeValue, setSizeValue] = useState({
+const Size = ({ value, setFilterValue, filterValue }) => {
+  const [sizeValue, setSizeValue] = useState({});
+
+  const [sizeShow, setSizeShow] = useState({
     "Chiều rộng": "",
     "Chiều cao": "",
     "Chiều sâu": "",
     "Chiều dài": "",
   });
 
+  const [sizeCheckbox, setSizeCheckbox] = useState({
+    "Chiều rộng": [],
+    "Chiều cao": [],
+    "Chiều sâu": [],
+    "Chiều dài": [],
+  });
+
   const sizeArray = (max) => {
     let array = [];
     for (let i = 0; i <= max; i += max / 4) {
-      let item = { min: i, max: i + (max / 4 - 1) };
+      let item = { minimum: i, maximum: i + (max / 4 - 1) };
       array.push(item);
     }
     return array;
+  };
+
+  const updateSizeValue = (props, array, size, checked) => {
+    let filterArray = filterValue.size;
+    let newItem = { name: props, minimum: size.minimum, maximum: size.maximum };
+    if (checked) {
+      filterArray.push(newItem);
+    } else {
+      const element = filterArray.find(
+        (item) => item.name === props && item.maximum === size.maximum
+      );
+      filterArray = filterArray.filter((item) => item !== element);
+    }
+    setFilterValue({
+      ...filterValue,
+      size: filterArray,
+    });
+    function sortByMinimum(a, b) {
+      return a.minimum - b.minimum;
+    }
+    function sortByMaximum(a, b) {
+      return b.maximum - a.maximum;
+    }
+    if (array.length === 0) {
+      const { [props]: removedProperty, ...newItem } = sizeValue;
+      setSizeValue(newItem);
+    } else {
+      setSizeValue({
+        ...sizeValue,
+        [props]: {
+          minimum: array.sort(sortByMinimum)[0].minimum,
+          maximum: array.sort(sortByMaximum)[0].maximum,
+        },
+      });
+    }
   };
 
   return (
@@ -166,22 +215,22 @@ const Size = ({ value }) => {
             <div className="size-heading">
               <button
                 onClick={() =>
-                  sizeValue[item.name]
-                    ? setSizeValue({ ...sizeValue, [item.name]: "" })
-                    : setSizeValue({ ...sizeValue, [item.name]: item.name })
+                  sizeShow[item.name]
+                    ? setSizeShow({ ...sizeShow, [item.name]: "" })
+                    : setSizeShow({ ...sizeShow, [item.name]: item.name })
                 }
               >
                 <span>{item.name}</span>
                 <UpOutlined
                   style={
-                    sizeValue[item.name] ? { transform: "rotate(180deg)" } : {}
+                    sizeShow[item.name] ? { transform: "rotate(180deg)" } : {}
                   }
                 />
               </button>
             </div>
             <div
               style={
-                sizeValue[item.name]
+                sizeShow[item.name]
                   ? { height: "auto", display: "block" }
                   : { height: "0%", display: "none" }
               }
@@ -191,14 +240,43 @@ const Size = ({ value }) => {
                 <label key={index}>
                   <span className="label-text">
                     <span>
-                      {size.min === item.maximum
-                        ? `${size.min}+"`
-                        : `${size.min} - ${size.max}"`}
+                      {size.minimum === item.maximum
+                        ? `${size.minimum}+"`
+                        : `${size.minimum} - ${size.maximum}"`}
                     </span>
                     <span>1000</span>
                   </span>
                   <div className="checked-button">
-                    <input type="checkbox" />
+                    <input
+                      checked={filterValue["size"].find(
+                        (el) =>
+                          el.name === item.name &&
+                          el.maximum === size["maximum"]
+                      )}
+                      onChange={(e) => {
+                        let newArray = sizeCheckbox[item.name];
+                        let checked = e.target.checked;
+                        if (checked) {
+                          setSizeCheckbox({
+                            ...sizeCheckbox,
+                            [item.name]: [...sizeCheckbox[item.name], size],
+                          });
+                          newArray.push(size);
+                        } else {
+                          setSizeCheckbox({
+                            ...sizeCheckbox,
+                            [item.name]: sizeCheckbox[item.name].filter(
+                              (s) => s.maximum !== size.maximum
+                            ),
+                          });
+                          newArray = newArray.filter(
+                            (s) => s.maximum !== size.maximum
+                          );
+                        }
+                        updateSizeValue(item.name, newArray, size, checked);
+                      }}
+                      type="checkbox"
+                    />
                     <span className="checkbox-symbol"></span>
                   </div>
                 </label>

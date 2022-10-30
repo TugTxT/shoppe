@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavbarIKEAStyle from "../../styled/NavbarIKEA";
+import NavbarFurnitunoStyle from "../../styled/NavbarFurnituno";
 import truck from "../../assets/svgIcons/truck.svg";
 import shopping_bag from "../../assets/svgIcons/shopping_bag.svg";
 import heart from "../../assets/svgIcons/heart.svg";
@@ -17,7 +17,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
-const NavbarIKEA = () => {
+const NavbarFurnituno = () => {
   const [appear, setAppear] = useState(false);
 
   const [navbar, setNavbar] = useState("");
@@ -45,7 +45,7 @@ const NavbarIKEA = () => {
   window.addEventListener("scroll", (e) => appearNavbar(e));
 
   return (
-    <NavbarIKEAStyle>
+    <NavbarFurnitunoStyle>
       <div className="menu-hambuger-container">
         <div className="menu-hambuger-inner">
           <div className="menu-hambuger">
@@ -253,8 +253,8 @@ const NavbarIKEA = () => {
           </ul>
         </section>
       </div>
-    </NavbarIKEAStyle>
+    </NavbarFurnitunoStyle>
   );
 };
 
-export default NavbarIKEA;
+export default NavbarFurnituno;
