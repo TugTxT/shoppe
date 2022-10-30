@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 100%;
   /* max-height: min((100vh - 96px) - 60px, 734px); */
-  max-height: 218.031px;
+  /* max-height: 218.031px; */
+  max-height: 218px;
   padding: 2rem;
   /* min-width: 300px; */
   overflow-x: hidden;

@@ -73,7 +73,7 @@ const NavbarIKEA = styled.div`
           width: calc(100vw - 150px);
           height: 90px;
           padding-left: 90px;
-          padding-right: 40px;
+          padding-right: 20px;
           /* border-bottom: solid 1px #dfdfdf;
           padding-bottom: 1rem; */
           .header-logo {

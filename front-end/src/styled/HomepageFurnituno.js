@@ -351,6 +351,10 @@ const Homepage = styled.div`
         &:hover {
           background: rgba(51, 51, 51, 1);
         }
+        div {
+          width: calc(106.5px - 3rem);
+          transform: translateY(-5px);
+        }
       }
     }
   }

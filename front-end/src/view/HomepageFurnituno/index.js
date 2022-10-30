@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import productsList from "../../data/Products";
-import HomepageStyle from "../../styled/HomepageIKEA";
+import HomepageStyle from "../../styled/HomepageFurnituno";
 import HoverCard from "../../component/util/HoverCard/HoverCard";
 import categories from "../../data/Categories";
 import PopularCategories from "../../data/PopularCategories";
@@ -9,12 +9,13 @@ import delivery from "../../assets/svgIcons/delivery.svg";
 import collect from "../../assets/svgIcons/collect.svg";
 import assembly from "../../assets/svgIcons/assembly.svg";
 import credit_card from "../../assets/svgIcons/credit-card.svg";
+import Loading from "../../component/Loading";
 
 import Tippy from "@tippyjs/react/headless";
 import Slider from "react-slick";
 import { HeartOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 
-const HomepageIKEA = () => {
+const HomepageFurnituno = () => {
   const settings = {
     dots: false,
     infinite: false,
@@ -56,6 +57,8 @@ const HomepageIKEA = () => {
 
   const [roomFilter, setRoomFilter] = useState("All");
 
+  const [loading, setLoading] = useState(false);
+
   const instagram_image = [
     "https://cdn-yotpo-images-production.yotpo.com/instagram/26/18253470688138226/standard_resolution.jpg",
     "https://cdn-yotpo-images-production.yotpo.com/instagram/39/17959962665033239/standard_resolution.jpg",
@@ -82,6 +85,13 @@ const HomepageIKEA = () => {
     "https://www.ikea.com/ext/ingkadam/m/3d982d972636b093/original/PH157148-crop001.jpg?f=xs",
     "https://www.ikea.com/ext/ingkadam/m/7c923e19aaaa90b5/original/PH168401-crop003.jpg?f=xs",
   ];
+
+  const handleShowmore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
 
   return (
     <HomepageStyle>
@@ -302,7 +312,13 @@ const HomepageIKEA = () => {
           ))}
         </div>
         <div className="load-more">
-          <span>Xem thêm</span>
+          <span onClick={() => handleShowmore()}>
+            {loading ? (
+              <Loading width="5px" height="5px" background="#fff" />
+            ) : (
+              "Xem thêm"
+            )}
+          </span>
         </div>
       </section>
 
@@ -344,4 +360,4 @@ const HomepageIKEA = () => {
   );
 };
 
-export default HomepageIKEA;
+export default HomepageFurnituno;
