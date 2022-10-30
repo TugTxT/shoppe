@@ -6,9 +6,11 @@ import Footer from "./view/Footer/Footer";
 import NavbarIKEA from "./view/NavbarIKEA";
 import HomepageIKEA from "./view/HomepageIKEA";
 import Banner from "./view/Banner/Banner";
+import Login from "./view/Login/Login";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Register from "./view/Register/Register";
 
 function App() {
   return (
@@ -31,6 +33,22 @@ function App() {
               <NavbarIKEA />
               <Banner />
               <HomepageIKEA />
+            </div>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <div className="App">
+              <Login />
+            </div>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <div className="App">
+              <Register />
             </div>
           }
         />
