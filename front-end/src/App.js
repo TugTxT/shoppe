@@ -6,11 +6,14 @@ import Footer from "./view/Footer/Footer";
 import NavbarIKEA from "./view/NavbarFurnituno";
 import HomepageIKEA from "./view/HomepageFurnituno";
 import Banner from "./view/Banner/Banner";
+import FooterIKEA from "./view/FooterFurnituno";
+import ProductsPage from "./view/Products";
+import ProductDetail from "./view/ProductDetail";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FooterIKEA from "./view/FooterFurnituno";
-import ProductsPage from "./view/Products";
+import CartPage from "./view/Cart";
+import Wishlist from "./view/Wishlist";
 
 function App() {
   return (
@@ -43,6 +46,36 @@ function App() {
             <div className="App">
               <NavbarIKEA />
               <ProductsPage />
+              <FooterIKEA />
+            </div>
+          }
+        />
+        <Route
+          path="/furnituno/product/:id"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <ProductDetail />
+              <FooterIKEA />
+            </div>
+          }
+        />
+        <Route
+          path="/furnituno/cart"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <CartPage />
+              <FooterIKEA />
+            </div>
+          }
+        />
+        <Route
+          path="/furnituno/wish-list"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <Wishlist />
               <FooterIKEA />
             </div>
           }
