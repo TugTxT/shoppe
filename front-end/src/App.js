@@ -11,6 +11,9 @@ import Login from "./view/Login/Login";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Register from "./view/Register/Register";
+import AcountInfor from "./view/UserAcount/AcountInfor";
+import Address from "./view/UserAcount/Address";
+import ManageOrder from "./view/UserAcount/ManageOrder";
 
 function App() {
   return (
@@ -49,6 +52,33 @@ function App() {
           element={
             <div className="App">
               <Register />
+            </div>
+          }
+        />
+        <Route
+          path="/acount-infor"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <AcountInfor />
+            </div>
+          }
+        />
+        <Route
+          path="/address"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <Address />
+            </div>
+          }
+        />
+        <Route
+          path="/manageOrder"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <ManageOrder />
             </div>
           }
         />

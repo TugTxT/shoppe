@@ -125,6 +125,8 @@ function Register() {
           <label>Ngày sinh</label>
           <input
             type={"date"}
+            required
+            pattern="\d{4}-\d{2}-\d{2}"
             {...register("dateOfBirth", { required: true })}
           />
           {errors.dateOfBirth?.type !== undefined && (
