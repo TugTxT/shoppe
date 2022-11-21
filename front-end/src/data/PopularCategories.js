@@ -1,85 +1,85 @@
 const PopularCategories = [
   {
     id: 0,
-    name: "Sofas & Sectionals",
+    name: "Sô pha và sô pha nhiều ngăn",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/sofas_sectionals.jpg",
   },
   {
     id: 1,
-    name: "Beds & Mattresses",
+    name: "Giường và nệm",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/beds_mattresses.jpg",
   },
   {
     id: 2,
-    name: "Bookcases & Shelving",
+    name: "Kệ sách và giá đỡ",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/bookcases_shelving.jpg",
   },
   {
     id: 3,
-    name: "TV & Media Furniture",
+    name: "Tivi và giải trí",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/tv_media.jpg",
   },
   {
     id: 4,
-    name: "Storage & Organization",
+    name: "Lưu trữ & sắp xếp",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/storage_organization.jpg",
   },
   {
     id: 5,
-    name: "Tables & Desks",
+    name: "Bàn",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/tables_desks.jpg",
   },
   {
     id: 6,
-    name: "Lighting",
+    name: "Đèn",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/lighting.jpg",
   },
   {
     id: 7,
-    name: "Bathroom",
+    name: "Nhà tắm",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/bathroom.jpg",
   },
   {
     id: 8,
-    name: "Rugs",
+    name: "Thảm",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/rugs.jpg",
   },
   {
     id: 9,
-    name: "Dressers",
+    name: "Tủ quần áo",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/dressers_new.jpg",
   },
   {
     id: 10,
-    name: "Children & Nursery",
+    name: "Đồ chơi trẻ con",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/children_nursery.jpg",
   },
   {
     id: 11,
-    name: "Cookware & Tableware",
+    name: "Đồ dùng nấu ăn",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/cookware_tableware.jpg",
   },
   {
     id: 12,
-    name: "Appliances",
+    name: "Đồ gia dụng",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/kitchen_appliances.jpg",
   },
   {
     id: 13,
-    name: "Home Décor",
+    name: "Trang trí nhà cửa",
     attachment:
       "https://www.ikea.com/ext/us/images/featured-categories/home_decor.jpg",
   },
