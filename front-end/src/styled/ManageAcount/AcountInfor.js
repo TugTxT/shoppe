@@ -41,10 +41,10 @@ const AcountInforStyle = styled.div`
     font-size: 14px;
   }
   .form select {
-    width: 34%;
+    width: 31.9%;
   }
   .form input[type="date" i] {
-    width: 210%;
+    width: 188%;
   }
   .i {
   }
@@ -76,6 +76,9 @@ const AcountInforStyle = styled.div`
   }
   .re-pass p {
     margin: 1%;
+  }
+  .ai {
+    font-weight: 700;
   }
 `;
 

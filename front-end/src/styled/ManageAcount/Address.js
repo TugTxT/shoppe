@@ -25,7 +25,9 @@ const AddressStyle = styled.div`
     margin-left: 5%;
     cursor: pointer;
   }
-
+  .ad {
+    font-weight: 700;
+  }
   .card-address {
     display: flex;
     flex-direction: column;

@@ -92,6 +92,9 @@ const ManageOrderStyle = styled.div`
     border-bottom: 2px #007cc1 solid;
     color: #007cc1;
   }
+  .mo {
+    font-weight: 700;
+  }
   .order-table {
     display: flex;
     font-style: normal;

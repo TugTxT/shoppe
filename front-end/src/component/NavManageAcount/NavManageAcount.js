@@ -25,18 +25,18 @@ function NavManageAcount() {
             <div className="avt-phone">{UserAcountInfor[1].phone} </div>
           </div>
         </div>
-        <div className="acount-info">
-          <UserOutlined /> Thông tin tài khoản{" "}
-          <ArrowRightOutlined className="arrow-icon" />
-        </div>
-        <div className="address">
+        <Link to={"/acount-infor"} className="acount-info ai">
+          <UserOutlined /> Thông tin tài khoản
+          <ArrowRightOutlined className="arrow-icon ai" />
+        </Link>
+        <Link to={"/address"} className="address ad">
           <EnvironmentOutlined /> Địa chỉ và liên hệ
-          <ArrowRightOutlined className="arrow-icon" />
-        </div>
-        <div className="purchase-history">
+          <ArrowRightOutlined className="arrow-icon ad" />
+        </Link>
+        <Link to={"/manageorder"} className="purchase-history mo">
           <ShoppingCartOutlined /> Lịch sử mua hàng
-          <ArrowRightOutlined className="arrow-icon" />
-        </div>
+          <ArrowRightOutlined className="arrow-icon mo" />
+        </Link>
         <div className="warranty">
           <FileProtectOutlined />
           Tra cứu bảo hành <ArrowRightOutlined className="arrow-icon" />

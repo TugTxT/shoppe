@@ -84,5 +84,8 @@ const NavManageAcountStyle = styled.div`
     border: 0.5px solid #b7a4a4;
     bottom: -75%;
   }
+  a {
+    color: black;
+  }
 `;
 export default NavManageAcountStyle;
