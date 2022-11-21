@@ -31,15 +31,15 @@ function Address() {
         <div className="btn-add" onClick={handleAdd}>
           <PlusOutlined />
           &ensp;Thêm địa chỉ mới
-          {hideAdd && (
-            <div>
-              <form className="form" onSubmit={handleSubmit(submitForm)}>
-                <input type={"text"} {...register("inputAddress")}></input>
-                <input type={"submit"} value={"+"}></input>
-              </form>
-            </div>
-          )}
         </div>
+        {hideAdd && (
+          <div>
+            <form className="form" onSubmit={handleSubmit(submitForm)}>
+              <input type={"text"} {...register("inputAddress")}></input>
+              <input type={"submit"} value={"+"}></input>
+            </form>
+          </div>
+        )}
 
         <div className="card-address">
           {console.log(UserAcountInfor, ">>>")}

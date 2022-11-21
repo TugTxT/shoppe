@@ -34,18 +34,18 @@ function NavManageAcount() {
           <ArrowRightOutlined className="arrow-icon ad" />
         </Link>
         <Link to={"/manageorder"} className="purchase-history mo">
-          <ShoppingCartOutlined /> Lịch sử mua hàng
+          <ShoppingCartOutlined /> Theo dõi đơn hàng
           <ArrowRightOutlined className="arrow-icon mo" />
         </Link>
-        <div className="warranty">
+        <div className="warranty wr">
           <FileProtectOutlined />
           Tra cứu bảo hành <ArrowRightOutlined className="arrow-icon" />
         </div>
-        <div className="favorite">
+        <div className="favorite fv">
           <HeartOutlined /> Yêu thích
           <ArrowRightOutlined className="arrow-icon" />
         </div>
-        <div className="logout">
+        <div className="logout lo">
           <LogoutOutlined /> Đăng xuất
           <ArrowRightOutlined className="arrow-icon" />
         </div>

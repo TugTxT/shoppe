@@ -36,14 +36,14 @@ const AddressStyle = styled.div`
   input {
     display: block;
     box-sizing: border-box;
-    width: 93%;
+    width: 88%;
     height: 3rem;
     border-radius: 9px;
     border: 2px solid #d6d0d0;
     padding: 10px 15px;
     margin-bottom: 15px;
     font-size: 14px;
-    margin-left: 1%;
+    margin-left: 6%;
     margin-top: 1%;
   }
   input[type="submit" i] {

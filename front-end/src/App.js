@@ -14,6 +14,8 @@ import Register from "./view/Register/Register";
 import AcountInfor from "./view/UserAcount/AcountInfor";
 import Address from "./view/UserAcount/Address";
 import ManageOrder from "./view/UserAcount/ManageOrder";
+import Warranty from "./view/Warranty/Warranty";
+import Favorite from "./view/Favorite/Favorite";
 
 function App() {
   return (
@@ -79,6 +81,24 @@ function App() {
             <div className="App">
               <NavbarIKEA />
               <ManageOrder />
+            </div>
+          }
+        />
+        <Route
+          path="/warranty"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <Warranty />
+            </div>
+          }
+        />
+        <Route
+          path="/favorite"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <Favorite />
             </div>
           }
         />
