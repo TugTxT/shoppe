@@ -5,6 +5,7 @@ const userSliceReducer = createSlice({
   name: "users",
   initialState: {
     user: {},
+
     id: 0,
     token: "",
     status: "idle",
@@ -24,6 +25,15 @@ const userSliceReducer = createSlice({
         state.token = action.payload.token;
         state.id = action.payload.id;
         state.status = "idle";
+      })
+
+      .addCase(signup.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(signup.fulfilled, (state, action) => {
+        // state.token = action.payload.token;
+        state.id = action.payload.id;
+        state.status = "idle";
       });
   },
 });
@@ -37,6 +47,30 @@ export const login = createAsyncThunk("users/login", async (user) => {
     // window.location = "/furnituno";
     localStorage.setItem("firstLogin", true);
     // localStorage.setItem('refreshtoken',res.data.refreshToken)
+    window.location = "/";
+    return res.data.data;
+  } catch (err) {
+    console.log(err.response.data.msg);
+  }
+});
+export const signup = createAsyncThunk("users/register", async (user) => {
+  try {
+    const res = await axios.post("/users/signup", {
+      ...user,
+      url: "hieune.com/",
+    });
+    window.location = "/set-password";
+    return res.data.data;
+  } catch (err) {
+    console.log(err.response.data.msg);
+  }
+});
+export const setPassword = createAsyncThunk("users/register", async (user) => {
+  try {
+    const res = await axios.post("/users/set-password", {
+      ...user,
+    });
+    window.location = "/login";
     return res.data.data;
   } catch (err) {
     console.log(err.response.data.msg);

@@ -12,6 +12,8 @@ import {
   EyeInvisibleOutlined,
   EyeOutlined,
 } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import { signup } from "../../redux-toolkit/reducer/userSliceReducer";
 const schema = yup.object().shape({
   userName: yup.string().required(" Vui lòng nhập tên tài khoản!"),
   // dateOfBirth: yup
@@ -48,6 +50,8 @@ function Register() {
   const [isChecked, setIsChecked] = useState(false);
   const [hidePass, setHidePass] = useState(true);
 
+  const dispatch = useDispatch();
+
   const handleChecked = (event) => {
     if (event.target.checked) {
       setIsChecked(true);
@@ -83,6 +87,7 @@ function Register() {
   const submitForm = (data) => {
     console.log("data", data);
     setDataForm(data);
+    dispatch(signup(data));
   };
   return (
     <RegisterStyle>
@@ -217,20 +222,21 @@ function Register() {
               {errors.confirmPassword?.message}
             </p>
           )} */}
+
           <div style={{ display: "flex", marginLeft: "-1%", marginTop: "5%" }}>
             <input type={"checkbox"} onChange={handleChecked} />
             <span style={{ marginTop: "2.5%", marginLeft: "2%" }}>
               Tôi đồng ý với các Điều khoản và Điều kiện và Chính sách Bảo mật .
             </span>
           </div>
-          <Link to={"/set-password"}>
-            <input
-              type={"submit"}
-              // className={isChecked ? "btn-submit-disable" : "btn-submit-active"}
-              value="Xác thực email"
-              disabled={isChecked ? "" : "disabled"}
-            />
-          </Link>
+          {/* <Link to={"/set-password"}> */}
+          <input
+            type={"submit"}
+            // className={isChecked ? "btn-submit-disable" : "btn-submit-active"}
+            value="Xác thực email"
+            disabled={isChecked ? "" : "disabled"}
+          />
+          {/* </Link> */}
         </form>
       </div>
     </RegisterStyle>

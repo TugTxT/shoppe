@@ -62,7 +62,7 @@ function Login() {
       </div>
       <div className="right">
         <form onSubmit={handleSubmit(submitForm)} className={"form"}>
-          <label>E-mail</label>
+          <label>Tên đăng nhập</label>
           <input
             type={"text"}
             name={"username"}

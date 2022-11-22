@@ -84,6 +84,7 @@ const LoginStyle = styled.div`
     width: 90%;
     color: rgb(255, 255, 255);
     font-size: 1.25rem;
+    cursor: pointer;
   }
   input[type="checkbox" i] {
     display: block;
@@ -120,7 +121,7 @@ const LoginStyle = styled.div`
     width: 44%;
     position: absolute;
     top: 90%;
-    right: 28.5%;
+    right: 33.5%;
     color: white;
     font-size: 1.25rem;
   }

@@ -24,6 +24,7 @@ import ProductDetail from "./view/ProductDetail";
 
 import CartPage from "./view/Cart";
 import Wishlist from "./view/Wishlist";
+import store from "./redux-toolkit/store";
 
 function App() {
   return (

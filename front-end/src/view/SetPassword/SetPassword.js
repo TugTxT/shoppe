@@ -10,21 +10,25 @@ import {
   EyeInvisibleOutlined,
   EyeOutlined,
 } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import { setPassword } from "../../redux-toolkit/reducer/userSliceReducer";
 const schema = yup.object().shape({
   token: yup.string().required(" Vui lòng nhập token!"),
-  password: yup
+  newPassword: yup
     .string()
     .required(" Vui lòng nhập mật khẩu !")
     .min(4, " Mật khẩu từ 4-20 ký tự !")
     .max(20, " Mật khẩu từ 4-20 ký tự !"),
-  confirmPassword: yup
-    .string()
-    .required(" Vui lòng nhập xác nhận mật khẩu!")
-    .oneOf([yup.ref("password"), null], " Mật khẩu không khớp"),
+  // confirmPassword: yup
+  //   .string()
+  //   .required(" Vui lòng nhập xác nhận mật khẩu!")
+  //   .oneOf([yup.ref("password"), null], " Mật khẩu không khớp"),
 });
 function SetPassword() {
   const [isChecked, setIsChecked] = useState(false);
   const [hidePass, setHidePass] = useState(true);
+
+  const dispatch = useDispatch();
 
   const handleChecked = (event) => {
     if (event.target.checked) {
@@ -45,6 +49,7 @@ function SetPassword() {
   });
   const submitForm = (data) => {
     console.log("data", data);
+    dispatch(setPassword(data));
   };
   return (
     <SetPasswordStyle>
@@ -109,7 +114,7 @@ function SetPassword() {
               type={hidePass ? "password" : "text"}
               name={"password"}
               className={"password"}
-              {...register("password", { required: true })}
+              {...register("newPassword", { required: true })}
             />
             <div className="hide-pass" onClick={() => setHidePass(!hidePass)}>
               {hidePass ? <EyeInvisibleOutlined /> : <EyeOutlined />}
@@ -122,18 +127,18 @@ function SetPassword() {
               {errors.password?.message}
             </p>
           )}
-          <label>Xác nhận mật khẩu</label>
+          {/* <label>Xác nhận mật khẩu</label>
           <div className="pass">
             <input
               type={hidePass ? "password" : "text"}
               name={"password"}
               className={"password"}
-              {...register("confirmPassword", { required: true })}
+              // {...register("confirmPassword", { required: true })}
             />
             <div className="hide-pass" onClick={() => setHidePass(!hidePass)}>
               {hidePass ? <EyeInvisibleOutlined /> : <EyeOutlined />}
             </div>
-          </div>
+          </div> */}
 
           {errors.confirmPassword?.type !== undefined && (
             <p className="warning">
