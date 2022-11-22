@@ -9,13 +9,22 @@ const FavoriteStyle = styled.div`
     background: #f9f9f9;
     border-radius: 1%;
     margin-top: 4%;
-    padding-bottom: 7%;
+    padding-bottom: 3%;
   }
-  .right-bot {
+  h5 {
+    margin-left: 4%;
+  }
+  .right-bot1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background: #f9f9f9;
     border-radius: 1%;
     width: 100%;
     margin-top: 4%;
+    padding: 3%;
+  }
+  .right-bot {
     display: flex;
     flex-direction: column;
     align-items: center;

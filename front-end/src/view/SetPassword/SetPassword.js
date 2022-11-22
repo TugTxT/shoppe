@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import RegisterStyle from "../../styled/Register";
+import SetPasswordStyle from "../../styled/SetPassword";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
 import {
   ArrowLeftOutlined,
   ExclamationCircleOutlined,
@@ -13,38 +11,18 @@ import {
   EyeOutlined,
 } from "@ant-design/icons";
 const schema = yup.object().shape({
-  userName: yup.string().required(" Vui lòng nhập tên tài khoản!"),
-  // dateOfBirth: yup
-  //   .date(" Vui lòng chọn ngày sinh!")
-  //   .typeError(" Vui lòng chọn ngày sinh!")
-  //   .required(" Vui lòng nhập ngày sinh!")
-  //   .max(new Date(), " Bạn đến từ tương lai à ?")
-  //   .min("1969-11-13", " Bạn sống hơi thọ rồi!"),
-
-  // tel: yup
-  //   .string()
-  //   .required(" Vui lòng nhập số điện thoại!")
-  //   .matches(
-  //     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-  //     " Số điện thoại không hợp lệ!"
-  //   ),
-
-  email: yup
+  token: yup.string().required(" Vui lòng nhập token!"),
+  password: yup
     .string()
-    .email(" Định dạng email chưa đúng")
-    .required(" Vui lòng nhập email !"),
-  // password: yup
-  //   .string()
-  //   .required(" Vui lòng nhập mật khẩu !")
-  //   .min(4, " Mật khẩu từ 4-20 ký tự !")
-  //   .max(20, " Mật khẩu từ 4-20 ký tự !"),
-  // confirmPassword: yup
-  //   .string()
-  //   .required(" Vui lòng nhập xác nhận mật khẩu!")
-  //   .oneOf([yup.ref("password"), null], " Mật khẩu không khớp"),
+    .required(" Vui lòng nhập mật khẩu !")
+    .min(4, " Mật khẩu từ 4-20 ký tự !")
+    .max(20, " Mật khẩu từ 4-20 ký tự !"),
+  confirmPassword: yup
+    .string()
+    .required(" Vui lòng nhập xác nhận mật khẩu!")
+    .oneOf([yup.ref("password"), null], " Mật khẩu không khớp"),
 });
-function Register() {
-  const [dataForm, setDataForm] = useState();
+function SetPassword() {
   const [isChecked, setIsChecked] = useState(false);
   const [hidePass, setHidePass] = useState(true);
 
@@ -58,21 +36,6 @@ function Register() {
     }
   };
 
-  const registerApi = async () => {
-    try {
-      const json = JSON.stringify({
-        userName: dataForm.userName,
-        email: dataForm.email,
-        url: "hieune.com/",
-      });
-      const res = await axios.post(`http://localhost:8081/users/signup`, json, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (errors) {}
-  };
-
   const {
     register,
     handleSubmit,
@@ -82,10 +45,9 @@ function Register() {
   });
   const submitForm = (data) => {
     console.log("data", data);
-    setDataForm(data);
   };
   return (
-    <RegisterStyle>
+    <SetPasswordStyle>
       <div className="left">
         <div className="left-head">
           <div className="icon-arrow">
@@ -129,57 +91,19 @@ function Register() {
       </div>
       <div className="right">
         <form className="form" onSubmit={handleSubmit(submitForm)}>
-          <label>Tên đăng nhập</label>
+          <label>Token</label>
           <input
             type={"text"}
-            {...register("userName", { required: true })}
-            // placeholder={"Họ và tên"}
+            {...register("token", { required: true })}
+            placeholder={"Token"}
           />
-          {errors.name?.type !== undefined && (
+          {errors.token?.type !== undefined && (
             <p className="warning">
               <ExclamationCircleOutlined />
-              {errors.name?.message}
+              {errors.token?.message}
             </p>
           )}
-          {/* <label>Ngày sinh</label>
-          <input
-            type={"date"}
-            required
-            pattern="\d{4}-\d{2}-\d{2}"
-            {...register("dateOfBirth", { required: true })}
-          />
-          {errors.dateOfBirth?.type !== undefined && (
-            <p className="warning">
-              <ExclamationCircleOutlined />
-              {console.log({ errors })}
-              {errors.dateOfBirth?.message}
-            </p>
-          )} */}
-          {/* <label>Số điện thoại</label>
-          <input type={"tel"} {...register("tel", { required: true })} />
-          {errors.tel?.type !== undefined && (
-            <p className="warning">
-              <ExclamationCircleOutlined />
-              {errors.tel?.message}
-            </p>
-          )} */}
-          <label>E-mail</label>
-          <input
-            type={"email"}
-            name={"email"}
-            className={
-              errors.email?.type !== undefined ? "email-false" : "email-true"
-            }
-            {...register("email", { required: true })}
-          />
-          {errors.email?.type !== undefined && (
-            <p className="warning">
-              <ExclamationCircleOutlined />
-              {errors.email?.message}
-            </p>
-          )}
-          {/* {console.log(errors.email?.message, errors.email?.type)} */}
-          {/* <label>Mật khẩu</label>
+          <label>Mật khẩu</label>
           <div className="pass">
             <input
               type={hidePass ? "password" : "text"}
@@ -216,25 +140,23 @@ function Register() {
               <ExclamationCircleOutlined />
               {errors.confirmPassword?.message}
             </p>
-          )} */}
+          )}
           <div style={{ display: "flex", marginLeft: "-1%", marginTop: "5%" }}>
             <input type={"checkbox"} onChange={handleChecked} />
             <span style={{ marginTop: "2.5%", marginLeft: "2%" }}>
               Tôi đồng ý với các Điều khoản và Điều kiện và Chính sách Bảo mật .
             </span>
           </div>
-          <Link to={"/set-password"}>
-            <input
-              type={"submit"}
-              // className={isChecked ? "btn-submit-disable" : "btn-submit-active"}
-              value="Xác thực email"
-              disabled={isChecked ? "" : "disabled"}
-            />
-          </Link>
+          <input
+            type={"submit"}
+            // className={isChecked ? "btn-submit-disable" : "btn-submit-active"}
+            value="Đăng ký"
+            disabled={isChecked ? "" : "disabled"}
+          />
         </form>
       </div>
-    </RegisterStyle>
+    </SetPasswordStyle>
   );
 }
 
-export default Register;
+export default SetPassword;

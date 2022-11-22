@@ -57,7 +57,7 @@ const LoginStyle = styled.div`
   .form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     padding: 6% 30% 20% 10%;
   }
   input {

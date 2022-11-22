@@ -11,6 +11,7 @@ import Login from "./view/Login/Login";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Register from "./view/Register/Register";
+import SetPassword from "./view/SetPassword/SetPassword";
 import AcountInfor from "./view/UserAcount/AcountInfor";
 import Address from "./view/UserAcount/Address";
 import ManageOrder from "./view/UserAcount/ManageOrder";
@@ -146,6 +147,15 @@ function App() {
             <div className="App">
               <NavbarIKEA />
               <Favorite />
+            </div>
+          }
+        />
+        <Route
+          path="/set-password"
+          element={
+            <div className="App">
+              <NavbarIKEA />
+              <SetPassword />
             </div>
           }
         />

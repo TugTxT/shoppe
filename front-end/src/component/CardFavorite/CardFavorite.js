@@ -1,18 +1,15 @@
 import React from "react";
 import CardFavoriteStyle from "./style";
 
-function CardFavorite(cardAddress, infor) {
+function CardFavorite({ cardFavorite }) {
   return (
     <CardFavoriteStyle>
       <div className="infor">
-        <div className="name">
-          {cardAddress.infor.name},{cardAddress.infor.phone},
-          {console.log(cardAddress)}
-        </div>
-        <div className="addre">{cardAddress.cardAddress}</div>
+        <img src={cardFavorite.product.attachment} />
+        {console.log(cardFavorite)}
       </div>
     </CardFavoriteStyle>
   );
 }
 
-export default CardAddress;
+export default CardFavorite;

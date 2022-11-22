@@ -57,9 +57,6 @@ function Login() {
             </p>
           </h1>
         </div>
-        <div className="left-bot">
-          <p>© Inter IKEA Systems BV 1999-2022</p>
-        </div>
       </div>
       <div className="right">
         <form onSubmit={handleSubmit(submitForm)} className={"form"}>
@@ -100,7 +97,7 @@ function Login() {
           )}
           <Link to={"#"}>Bạn quên mật khẩu ?</Link>
           <div style={{ display: "flex", marginLeft: "-1%", marginTop: "5%" }}>
-            <input type={"checkbox"} />
+            <input type={"checkbox"} {...register("remember")} />
             <span style={{ marginTop: "2.5%", marginLeft: "2%" }}>
               Ghi nhớ đăng nhập
             </span>

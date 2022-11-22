@@ -5,55 +5,11 @@ import NavManageAcount from "../../component/NavManageAcount/NavManageAcount";
 import UserAcountInfor from "../../data/UserAcountInfor";
 import { Col, Row, Tabs } from "antd";
 import NoOrder from "../../component/ManageOrder/NoOrder";
-import { DeleteOutlined } from "@ant-design/icons";
 import Order from "../../component/ManageOrder/Order";
 import { DataOrder } from "../../data/DataOrder";
 
 function ManageOrder() {
   const [btnActive, setBtnActive] = useState("nav-btn");
-
-  // const columns = [
-  //   {
-  //     key: "name",
-  //     title: "Name",
-  //     dataIndex: "name",
-  //   },
-  //   {
-  //     key: "quantity",
-  //     title: "Quantity",
-  //     dataIndex: "quantity",
-  //   },
-  //   {
-  //     key: "price",
-  //     title: "Price",
-  //     dataIndex: "price",
-  //   },
-  //   {
-  //     key: "discount",
-  //     title: "Discount",
-  //     dataIndex: "discount",
-  //   },
-
-  //   {
-  //     key: "total",
-  //     title: "Total",
-  //     dataIndex: "total",
-  //   },
-  //   {
-  //     key: "action",
-  //     title: "Actions",
-  //     render: (record) => {
-  //       return (
-  //         <>
-  //           <DeleteOutlined
-  //             style={{ color: "red" }}
-  //             onClick={() => Delete(record)}
-  //           />
-  //         </>
-  //       );
-  //     },
-  //   },
-  // ];
 
   return (
     <ManageOrderStyle>
@@ -76,25 +32,25 @@ function ManageOrder() {
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                        <Row>
+                      <Row>
                           <Col span={2}>
-                            <div className="t no">No</div>
+                            <div className="t no">STT</div>
                           </Col>
                           <Col span={8}>
-                            <div className="t name">Produce</div>
+                            <div className="t name">Sản phẩm</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t quantity">Quantity</div>
+                            <div className="t quantity">Số lượng</div>
                           </Col>
                           <Col span={4}>
-                            <div className="t price">Price</div>
+                            <div className="t price">Giá</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t discount">Discount</div>
+                            <div className="t discount">Khuyến mại</div>
                           </Col>
                           <div className="c">
                             <Col span={4}>
-                              <div className="t total">Total</div>
+                              <div className="t total">Tổng</div>
                             </Col>
                           </div>
                         </Row>
@@ -115,25 +71,25 @@ function ManageOrder() {
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                        <Row>
+                      <Row>
                           <Col span={2}>
-                            <div className="t no">No</div>
+                            <div className="t no">STT</div>
                           </Col>
                           <Col span={8}>
-                            <div className="t name">Produce</div>
+                            <div className="t name">Sản phẩm</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t quantity">Quantity</div>
+                            <div className="t quantity">Số lượng</div>
                           </Col>
                           <Col span={4}>
-                            <div className="t price">Price</div>
+                            <div className="t price">Giá</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t discount">Discount</div>
+                            <div className="t discount">Khuyến mại</div>
                           </Col>
                           <div className="c">
                             <Col span={4}>
-                              <div className="t total">Total</div>
+                              <div className="t total">Tổng</div>
                             </Col>
                           </div>
                         </Row>
@@ -156,23 +112,23 @@ function ManageOrder() {
                       <div className="row">
                         <Row>
                           <Col span={2}>
-                            <div className="t no">No</div>
+                            <div className="t no">STT</div>
                           </Col>
                           <Col span={8}>
-                            <div className="t name">Produce</div>
+                            <div className="t name">Sản phẩm</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t quantity">Quantity</div>
+                            <div className="t quantity">Số lượng</div>
                           </Col>
                           <Col span={4}>
-                            <div className="t price">Price</div>
+                            <div className="t price">Giá</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t discount">Discount</div>
+                            <div className="t discount">Khuyến mại</div>
                           </Col>
                           <div className="c">
                             <Col span={4}>
-                              <div className="t total">Total</div>
+                              <div className="t total">Tổng</div>
                             </Col>
                           </div>
                         </Row>
@@ -193,25 +149,25 @@ function ManageOrder() {
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                        <Row>
+                      <Row>
                           <Col span={2}>
-                            <div className="t no">No</div>
+                            <div className="t no">STT</div>
                           </Col>
                           <Col span={8}>
-                            <div className="t name">Produce</div>
+                            <div className="t name">Sản phẩm</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t quantity">Quantity</div>
+                            <div className="t quantity">Số lượng</div>
                           </Col>
                           <Col span={4}>
-                            <div className="t price">Price</div>
+                            <div className="t price">Giá</div>
                           </Col>
                           <Col span={3}>
-                            <div className="t discount">Discount</div>
+                            <div className="t discount">Khuyến mại</div>
                           </Col>
                           <div className="c">
                             <Col span={4}>
-                              <div className="t total">Total</div>
+                              <div className="t total">Tổng</div>
                             </Col>
                           </div>
                         </Row>

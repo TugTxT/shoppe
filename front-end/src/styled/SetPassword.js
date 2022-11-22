@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const RegisterStyle = styled.div`
+const SetPasswordStyle = styled.div`
   display: flex;
 
   .left {
@@ -103,20 +103,20 @@ const RegisterStyle = styled.div`
     cursor: not-allowed;
   }
   /* .btn-submit-disable {
-    background: #0058a3;
-    border-radius: 64px;
-    transition-duration: 0.25s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 3.5rem;
-    padding: 0 2rem;
-    width: 90%;
-    color: rgb(255, 255, 255);
-    font-size: 1.25rem;
-    opacity: 20%;
-  } */
+  background: #0058a3;
+  border-radius: 64px;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.5rem;
+  padding: 0 2rem;
+  width: 90%;
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  opacity: 20%;
+} */
   input[type="checkbox" i] {
     display: block;
     width: 5%;
@@ -236,4 +236,4 @@ const RegisterStyle = styled.div`
     height: 16rem;
   }
 `;
-export default RegisterStyle;
+export default SetPasswordStyle;
