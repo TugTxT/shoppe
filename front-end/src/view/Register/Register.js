@@ -62,20 +62,20 @@ function Register() {
     }
   };
 
-  const registerApi = async () => {
-    try {
-      const json = JSON.stringify({
-        userName: dataForm.userName,
-        email: dataForm.email,
-        url: "hieune.com/",
-      });
-      const res = await axios.post(`http://localhost:8081/users/signup`, json, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (errors) {}
-  };
+  // const registerApi = async () => {
+  //   try {
+  //     const json = JSON.stringify({
+  //       userName: dataForm.userName,
+  //       email: dataForm.email,
+  //       url: "hieune.com/",
+  //     });
+  //     const res = await axios.post(`http://localhost:8081/users/signup`, json, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //   } catch (errors) {}
+  // };
 
   const {
     register,

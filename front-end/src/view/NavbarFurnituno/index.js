@@ -16,6 +16,7 @@ import {
   SearchOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const NavbarFurnituno = () => {
   const [appear, setAppear] = useState(false);
@@ -199,8 +200,11 @@ const NavbarFurnituno = () => {
               )}
             </ul>
             <ul>
+              <li>
+                <Link to={"/acount-infor"}>Hồ sơ</Link>
+              </li>
               {[
-                "Hồ sơ",
+                // "Hồ sơ",
                 "Đơn hàng",
                 "Vị trí cửa hàng",
                 "Dịch vụ khách hàng",

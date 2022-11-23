@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
 import ManageOrderStyle from "../../styled/ManageAcount/ManageOrder";
 import NavManageAcount from "../../component/NavManageAcount/NavManageAcount";
@@ -7,9 +7,17 @@ import { Col, Row, Tabs } from "antd";
 import NoOrder from "../../component/ManageOrder/NoOrder";
 import Order from "../../component/ManageOrder/Order";
 import { DataOrder } from "../../data/DataOrder";
+import { useDispatch } from "react-redux";
+import { orderStatus } from "../../redux-toolkit/reducer/orderSliceReducer";
 
 function ManageOrder() {
   const [btnActive, setBtnActive] = useState("nav-btn");
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(orderStatus());
+    // console.log(dataUser);
+  }, []);
 
   return (
     <ManageOrderStyle>
@@ -32,7 +40,7 @@ function ManageOrder() {
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                      <Row>
+                        <Row>
                           <Col span={2}>
                             <div className="t no">STT</div>
                           </Col>
@@ -71,7 +79,7 @@ function ManageOrder() {
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                      <Row>
+                        <Row>
                           <Col span={2}>
                             <div className="t no">STT</div>
                           </Col>
@@ -144,12 +152,12 @@ function ManageOrder() {
                   <NoOrder />
                 )}
               </Tabs.TabPane>
-              <Tabs.TabPane tab="Đã giao" key="4">
+              <Tabs.TabPane tab="Đã nhận" key="4">
                 {DataOrder.length !== 0 ? (
                   <div className="bg">
                     <div className="tabl">
                       <div className="row">
-                      <Row>
+                        <Row>
                           <Col span={2}>
                             <div className="t no">STT</div>
                           </Col>

@@ -24,6 +24,7 @@ const userSliceReducer = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.token = action.payload.token;
         state.id = action.payload.id;
+        console.log(action.payload);
         state.status = "idle";
       })
 
@@ -33,6 +34,19 @@ const userSliceReducer = createSlice({
       .addCase(signup.fulfilled, (state, action) => {
         // state.token = action.payload.token;
         state.id = action.payload.id;
+
+        state.status = "idle";
+      })
+
+      .addCase(acountInfor.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(acountInfor.rejected, (state, action) => {
+        state.status = "idle";
+      })
+      .addCase(acountInfor.fulfilled, (state, action) => {
+        state.user = action.payload;
+        console.log(action);
         state.status = "idle";
       });
   },
@@ -46,8 +60,10 @@ export const login = createAsyncThunk("users/login", async (user) => {
     // toast.success('Login successfully ^^')
     // window.location = "/furnituno";
     localStorage.setItem("firstLogin", true);
+    localStorage.setItem("token", res.data.data.token);
+    localStorage.setItem("id", res.data.data.id);
     // localStorage.setItem('refreshtoken',res.data.refreshToken)
-    window.location = "/";
+    // window.location = "/";
     return res.data.data;
   } catch (err) {
     console.log(err.response.data.msg);
@@ -65,13 +81,30 @@ export const signup = createAsyncThunk("users/register", async (user) => {
     console.log(err.response.data.msg);
   }
 });
-export const setPassword = createAsyncThunk("users/register", async (user) => {
+export const setPassword = createAsyncThunk(
+  "users/setpassword",
+  async (user) => {
+    try {
+      const res = await axios.post("/users/set-password", {
+        ...user,
+      });
+      window.location = "/login";
+      return res.data.data;
+    } catch (err) {
+      console.log(err.response.data.msg);
+    }
+  }
+);
+
+export const acountInfor = createAsyncThunk("acountInfor", async () => {
   try {
-    const res = await axios.post("/users/set-password", {
-      ...user,
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
+    const res = await axios.get(`/userEntities/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
     });
-    window.location = "/login";
-    return res.data.data;
+    // const res= await axios.get(`https://jsonplaceholder.typicode.com/comments?postId=1`)
+    return res.data;
   } catch (err) {
     console.log(err.response.data.msg);
   }

@@ -13,6 +13,10 @@ import {
 } from "@ant-design/icons";
 
 function NavManageAcount() {
+  const handleLogout = () => {
+    window.confirm("Bạn có chắc muốn đăng xuất?");
+    localStorage.removeItem("token");
+  };
   return (
     <NavManageAcountStyle>
       <div className="left">
@@ -37,18 +41,18 @@ function NavManageAcount() {
           <ShoppingCartOutlined /> Theo dõi đơn hàng
           <ArrowRightOutlined className="arrow-icon mo" />
         </Link>
-        <div className="warranty wr">
+        <Link to={"/warranty"} className="warranty wr">
           <FileProtectOutlined />
           Tra cứu bảo hành <ArrowRightOutlined className="arrow-icon" />
-        </div>
-        <div className="favorite fv">
+        </Link>
+        <Link to={"/favorite"} className="favorite fv">
           <HeartOutlined /> Yêu thích
           <ArrowRightOutlined className="arrow-icon" />
-        </div>
-        <div className="logout lo">
+        </Link>
+        <Link to={"/"} className="logout lo" onClick={handleLogout}>
           <LogoutOutlined /> Đăng xuất
           <ArrowRightOutlined className="arrow-icon" />
-        </div>
+        </Link>
       </div>
     </NavManageAcountStyle>
   );

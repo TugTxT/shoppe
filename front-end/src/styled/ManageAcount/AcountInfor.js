@@ -73,6 +73,7 @@ const AcountInforStyle = styled.div`
     width: 50%;
     color: rgb(255, 255, 255);
     font-size: 1.25rem;
+    cursor: pointer;
   }
   .re-pass p {
     margin: 1%;

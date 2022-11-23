@@ -114,6 +114,7 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <AcountInfor />
+                <FooterIKEA />
               </div>
             }
           />
@@ -123,6 +124,7 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <Address />
+                <FooterIKEA />
               </div>
             }
           />
@@ -132,6 +134,7 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <ManageOrder />
+                <FooterIKEA />
               </div>
             }
           />
@@ -141,6 +144,7 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <Warranty />
+                <FooterIKEA />
               </div>
             }
           />
@@ -150,6 +154,7 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <Favorite />
+                <FooterIKEA />
               </div>
             }
           />
