@@ -239,7 +239,7 @@ const NavbarFurnituno = () => {
             </a>
           </div>
           <div className="header-link">
-            <a href="/sign-up">
+            <a href="/register">
               <span>Tạo tài khoản Furnituno</span>
               <RightOutlined />
             </a>

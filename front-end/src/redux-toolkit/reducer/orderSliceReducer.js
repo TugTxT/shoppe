@@ -4,11 +4,12 @@ import axios from "axios";
 const orderSliceReducer = createSlice({
   name: "orders",
   initialState: {
-    order: {},
-
+    order: "",
+    orderList: [],
     id: 0,
     token: "",
     status: "idle",
+    idOrder: "",
     isLogin: false,
     isAdmin: false,
   },
@@ -26,6 +27,11 @@ const orderSliceReducer = createSlice({
         // state.id = action.payload.id;
         console.log(action.payload);
         state.status = "idle";
+      })
+      .addCase(orderList.fulfilled, (state, action) => {
+        state.orderList = action.payload;
+        // state.id = action.payload.id;
+        state.status = "idle";
       });
   },
 });
@@ -42,22 +48,33 @@ const orderSliceReducer = createSlice({
 //   }
 // });
 
-export const orderStatus = createAsyncThunk("orderStatus", async () => {
+export const orderStatus = createAsyncThunk("orderStatus", async (status) => {
+  console.log(status);
   try {
     const token = localStorage.getItem("token");
-    // const id = localStorage.getItem("id");
+    const idOrder = localStorage.getItem("idOrder");
     const res = await axios.post(
       "/order/shipping/status",
-      { status: "Chờ vận chuyển" },
+      { status: status },
       {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    return res.data;
-  } catch (error) {
+    localStorage.setItem("idOrder", res.data.data[0].id);
+    console.log(res.data.data);
+    return res.data.data;
+  } catch (error) {}
+});
+
+export const orderList = createAsyncThunk("orderList", async () => {
+  try {
     const token = localStorage.getItem("token");
-    console.log(token, "ssss");
-  }
+    const idOrder = localStorage.getItem("idOrder");
+    const res = await axios.get(`/orderDetail/orderDetailByOrder/${idOrder}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return res.data.data;
+  } catch (error) {}
 });
 
 export default orderSliceReducer;

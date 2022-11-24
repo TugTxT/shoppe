@@ -12,31 +12,37 @@ function Order({ orderData, no }) {
           </Col>
           <Col span={8}>
             <div className="t1 name1">
-              <img src={orderData.img} />
-              <div>{orderData.name}</div>
+              <img src={orderData?.productVariationEnitity?.image} />
+              <div>
+                {orderData?.productVariationEnitity?.productId?.nameProduct}
+              </div>
             </div>
           </Col>
           <Col span={3}>
             <div className="t1 quantity1">{orderData.quantity}</div>
           </Col>
           <Col span={4}>
-            <div className="t1 price1">{orderData.price}</div>
+            <div className="t1 price1">
+              {orderData?.productVariationEnitity?.productId?.price}
+            </div>
           </Col>
           <Col span={3}>
-            <div className="t1 discount1">{orderData.discount}</div>
+            <div className="t1 discount1">{orderData.discount || 0}</div>
           </Col>
           <div className="c1">
             <Col span={4}>
               <div className="t1 total1">
-                {orderData.price * orderData.quantity +
-                  (orderData.price * orderData.discount * orderData.quantity) /
+                {orderData?.productVariationEnitity?.productId?.price *
+                  orderData.quantity +
+                  (orderData?.productVariationEnitity?.productId?.price *
+                    (orderData?.discount || 0) *
+                    orderData.quantity) /
                     100}
               </div>
             </Col>
           </div>
         </Row>
       </div>
-      {console.log("aaaa1", orderData)}
     </Orderstyle>
   );
 }

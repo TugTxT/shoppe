@@ -19,13 +19,13 @@ const userSliceReducer = createSlice({
         state.status = "loading";
       })
       .addCase(login.rejected, (state, action) => {
-        state.status = "idle";
+        state.status = "err";
       })
       .addCase(login.fulfilled, (state, action) => {
+        state.status = "sucsec";
         state.token = action.payload.token;
         state.id = action.payload.id;
         console.log(action.payload);
-        state.status = "idle";
       })
 
       .addCase(signup.pending, (state, action) => {
@@ -48,6 +48,12 @@ const userSliceReducer = createSlice({
         state.user = action.payload;
         console.log(action);
         state.status = "idle";
+      })
+
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        console.log(action.payload, "âa");
+        state.status = "idle";
       });
   },
 });
@@ -63,7 +69,8 @@ export const login = createAsyncThunk("users/login", async (user) => {
     localStorage.setItem("token", res.data.data.token);
     localStorage.setItem("id", res.data.data.id);
     // localStorage.setItem('refreshtoken',res.data.refreshToken)
-    // window.location = "/";
+    window.location = "/";
+    
     return res.data.data;
   } catch (err) {
     console.log(err.response.data.msg);
@@ -104,6 +111,27 @@ export const acountInfor = createAsyncThunk("acountInfor", async () => {
       headers: { Authorization: `Bearer ${token}` },
     });
     // const res= await axios.get(`https://jsonplaceholder.typicode.com/comments?postId=1`)
+    return res.data;
+  } catch (err) {
+    console.log(err.response.data.msg);
+  }
+});
+
+export const updateUser = createAsyncThunk("users/updateUser", async (user) => {
+  try {
+    const token = localStorage.getItem("token");
+    const id = localStorage.getItem("id");
+    const res = await axios.post(
+      "http://172.20.10.3:8081/users/update",
+      {
+        ...user,
+        id: id,
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    window.location = "/login";
     return res.data;
   } catch (err) {
     console.log(err.response.data.msg);

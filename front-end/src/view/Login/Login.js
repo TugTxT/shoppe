@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import LoginStyle from "../../styled/Login";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   ArrowLeftOutlined,
   ExclamationCircleOutlined,
@@ -12,6 +12,7 @@ import {
   EyeOutlined,
 } from "@ant-design/icons";
 import { login } from "../../redux-toolkit/reducer/userSliceReducer";
+import { selectStatusLogin } from "../../redux-toolkit/selector/selector";
 const schema = yup.object().shape({
   username: yup.string().required(" Vui lòng điền username !"),
   password: yup
@@ -22,6 +23,14 @@ const schema = yup.object().shape({
 });
 function Login() {
   const [hidePass, setHidePass] = useState(true);
+
+  const status = useSelector(selectStatusLogin);
+  console.log(status);
+  useEffect(() => {
+    if (status === "err") {
+      window.alert("sai thông tin đăng nhập hoặc mật khẩu!");
+    }
+  }, [status]);
 
   const dispatch = useDispatch();
 

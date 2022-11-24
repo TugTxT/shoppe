@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import NavManageAcount from "../../component/NavManageAcount/NavManageAcount";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { acountInfor } from "../../redux-toolkit/reducer/userSliceReducer";
+import {
+  acountInfor,
+  updateUser,
+} from "../../redux-toolkit/reducer/userSliceReducer";
 import { selectUser } from "../../redux-toolkit/selector/selector";
 
 import * as yup from "yup";
@@ -13,6 +16,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 function AcountInfor() {
+  const [reload, setReLoad] = useState(false);
+
   const schema = yup.object().shape({
     userName: yup.string().required(" Vui lòng nhập tên tài khoản!"),
     // dateOfBirth: yup
@@ -54,6 +59,8 @@ function AcountInfor() {
   });
   const submitForm = (data) => {
     console.log("data", data);
+    dispatch(updateUser(data));
+    setReLoad(!reload)
   };
 
   const dispatch = useDispatch();
@@ -63,7 +70,7 @@ function AcountInfor() {
   useEffect(() => {
     dispatch(acountInfor());
     console.log(dataUser);
-  }, []);
+  }, [reload]);
 
   return (
     <AcountInforStyle>
@@ -79,7 +86,7 @@ function AcountInfor() {
               <input
                 type={"text"}
                 className="name"
-                value={dataUser.fullName}
+                value={dataUser?.fullName}
                 {...register("fullName")}
               />
             </div>
@@ -88,7 +95,7 @@ function AcountInfor() {
               <input
                 type={"text"}
                 className="phone"
-                value={dataUser.userName}
+                value={dataUser?.userName}
                 {...register("userName")}
               />
             </div>
@@ -99,7 +106,7 @@ function AcountInfor() {
               <input
                 type={"email"}
                 className="email"
-                defaultValue={dataUser.email}
+                defaultValue={dataUser?.email}
                 {...register("email")}
               />
             </div>

@@ -85,7 +85,7 @@ const ManageOrderStyle = styled.div`
   .tabb .ant-tabs-tab {
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 34px;
   }
   .ant-tabs-tab-active {
