@@ -25,6 +25,7 @@ import ProductDetail from "./view/ProductDetail";
 import CartPage from "./view/Cart";
 import Wishlist from "./view/Wishlist";
 import store from "./redux-toolkit/store";
+import ForgotPass from "./view/ForgotPass/ForgotPass";
 
 function App() {
   return (
@@ -164,6 +165,15 @@ function App() {
               <div className="App">
                 <NavbarIKEA />
                 <SetPassword />
+              </div>
+            }
+          />
+          <Route
+            path="/forgot-password"
+            element={
+              <div className="App">
+                <NavbarIKEA />
+                <ForgotPass />
               </div>
             }
           />

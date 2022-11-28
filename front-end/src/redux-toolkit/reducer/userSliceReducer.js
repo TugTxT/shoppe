@@ -52,7 +52,13 @@ const userSliceReducer = createSlice({
 
       .addCase(updateUser.fulfilled, (state, action) => {
         state.user = action.payload;
-        console.log(action.payload, "âa");
+        console.log(action.payload, "acion_payload");
+        state.status = "idle";
+      })
+
+      .addCase(forgotPass.fulfilled, (state, action) => {
+        state.user = action.payload;
+        console.log(action.payload, "bbb");
         state.status = "idle";
       });
   },
@@ -70,7 +76,7 @@ export const login = createAsyncThunk("users/login", async (user) => {
     localStorage.setItem("id", res.data.data.id);
     // localStorage.setItem('refreshtoken',res.data.refreshToken)
     window.location = "/";
-    
+
     return res.data.data;
   } catch (err) {
     console.log(err.response.data.msg);
@@ -122,7 +128,7 @@ export const updateUser = createAsyncThunk("users/updateUser", async (user) => {
     const token = localStorage.getItem("token");
     const id = localStorage.getItem("id");
     const res = await axios.post(
-      "http://172.20.10.3:8081/users/update",
+      "/users/update",
       {
         ...user,
         id: id,
@@ -131,7 +137,20 @@ export const updateUser = createAsyncThunk("users/updateUser", async (user) => {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    window.location = "/login";
+    return res.data.data;
+  } catch (err) {
+    console.log(err.response.data.msg);
+  }
+});
+
+export const forgotPass = createAsyncThunk("users/forgotPass", async (user) => {
+  try {
+    const res = await axios.post("/users/forget-password", {
+      ...user,
+      url: "http://ijustforgotmypass.com/",
+    });
+    console.log(res.data);
+    // window.location = "/set-password";
     return res.data;
   } catch (err) {
     console.log(err.response.data.msg);

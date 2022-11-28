@@ -58,16 +58,18 @@ function SetPassword() {
           <div className="icon-arrow">
             <ArrowLeftOutlined />
           </div>
-          <img
-            alt="IKEA"
-            src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/307425108_653553736176279_2774900988508384418_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IVpOxwBG4mcAX-YNXz4&_nc_ht=scontent.fsgn2-4.fna&oh=03_AdSsNXeNpxVXlVB0c1pMka0fMI2ly5KLf6QaCeeUpft_Dw&oe=6382C306"
-            color="#0058a3"
-            className="logo"
-          />
+          <Link to={"/"}>
+            <img
+              alt="IKEA"
+              src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/307425108_653553736176279_2774900988508384418_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IVpOxwBG4mcAX-YNXz4&_nc_ht=scontent.fsgn2-4.fna&oh=03_AdSsNXeNpxVXlVB0c1pMka0fMI2ly5KLf6QaCeeUpft_Dw&oe=6382C306"
+              color="#0058a3"
+              className="logo"
+            />
+          </Link>
         </div>
         <div className="left-note">
           <h1>
-            <span className="text1">Đăng ký </span>
+            <span className="text1">Đặt mật khẩu </span>
             <span className="text2">tài khoản FurniTuno của bạn.</span>
             <br />
             <p>Nếu bạn đã có tài khoản, hãy </p>
@@ -146,17 +148,10 @@ function SetPassword() {
               {errors.confirmPassword?.message}
             </p>
           )}
-          <div style={{ display: "flex", marginLeft: "-1%", marginTop: "5%" }}>
-            <input type={"checkbox"} onChange={handleChecked} />
-            <span style={{ marginTop: "2.5%", marginLeft: "2%" }}>
-              Tôi đồng ý với các Điều khoản và Điều kiện và Chính sách Bảo mật .
-            </span>
-          </div>
           <input
             type={"submit"}
             // className={isChecked ? "btn-submit-disable" : "btn-submit-active"}
-            value="Đăng ký"
-            disabled={isChecked ? "" : "disabled"}
+            value="Đặt mật khẩu"
           />
         </form>
       </div>

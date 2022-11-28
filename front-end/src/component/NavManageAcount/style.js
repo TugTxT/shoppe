@@ -27,9 +27,31 @@ const NavManageAcountStyle = styled.div`
   .avt-info {
     margin-left: 5px;
   }
+  /* .avt-phone {
+    z-index: 10;
+    position: absolute;
+    left: 0px;
+  } */
+  /* input[type="file" i] {
+    border-radius: 64px;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3.5rem;
+    padding: 0 2rem;
+    width: 90%;
+    color: rgb(255, 255, 255);
+    font-size: 1.25rem;
+    cursor: pointer;
+  } */
   .avt-name {
     font-weight: 700;
     font-size: 1rem;
+    z-index: 10;
+    position: absolute;
+    left: 90px;
   }
   .acount-info {
     margin-top: 10%;

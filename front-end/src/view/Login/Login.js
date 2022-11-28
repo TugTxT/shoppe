@@ -51,21 +51,24 @@ function Login() {
           <div className="icon-arrow">
             <ArrowLeftOutlined />
           </div>
-          <img
-            alt="IKEA"
-            src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/307425108_653553736176279_2774900988508384418_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IVpOxwBG4mcAX-YNXz4&_nc_ht=scontent.fsgn2-4.fna&oh=03_AdSsNXeNpxVXlVB0c1pMka0fMI2ly5KLf6QaCeeUpft_Dw&oe=6382C306"
-            color="#0058a3"
-            className="logo"
-          />
+          <Link to={"/"}>
+            <img
+              alt="IKEA"
+              src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/307425108_653553736176279_2774900988508384418_n.png?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=IVpOxwBG4mcAX-YNXz4&_nc_ht=scontent.fsgn2-4.fna&oh=03_AdSsNXeNpxVXlVB0c1pMka0fMI2ly5KLf6QaCeeUpft_Dw&oe=6382C306"
+              color="#0058a3"
+              className="logo"
+            />
+          </Link>
         </div>
         <div className="left-note">
           <h1>
             <span className="text1">Đăng nhập </span>
-            <span className="text2">vào tài khoản IKEA của bạn.</span>
+            <span className="text2">vào tài khoản FURNITUNO của bạn.</span>
             <p>
-              Đăng nhập bằng địa chỉ email của bạn để thêm số điện thoại di động
-              vào tài khoản của bạn.
+              Đăng nhập bằng tên tài khoản và mật khẩu của bạn để có thể mua sắm
+              các sản phẩm chất lượng của
             </p>
+            <span className={"text1"}>FURNITUNO</span>
           </h1>
         </div>
       </div>
@@ -106,7 +109,7 @@ function Login() {
               {errors.password?.message}
             </p>
           )}
-          <Link to={"#"}>Bạn quên mật khẩu ?</Link>
+          <Link to={"/forgot-password"}>Bạn quên mật khẩu ?</Link>
           <div style={{ display: "flex", marginLeft: "-1%", marginTop: "5%" }}>
             <input {...register("remember")} type={"checkbox"} />
             <span style={{ marginTop: "2.5%", marginLeft: "2%" }}>

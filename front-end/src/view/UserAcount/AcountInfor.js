@@ -20,34 +20,10 @@ function AcountInfor() {
 
   const schema = yup.object().shape({
     userName: yup.string().required(" Vui lòng nhập tên tài khoản!"),
-    // dateOfBirth: yup
-    //   .date(" Vui lòng chọn ngày sinh!")
-    //   .typeError(" Vui lòng chọn ngày sinh!")
-    //   .required(" Vui lòng nhập ngày sinh!")
-    //   .max(new Date(), " Bạn đến từ tương lai à ?")
-    //   .min("1969-11-13", " Bạn sống hơi thọ rồi!"),
-
-    // tel: yup
-    //   .string()
-    //   .required(" Vui lòng nhập số điện thoại!")
-    //   .matches(
-    //     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    //     " Số điện thoại không hợp lệ!"
-    //   ),
-
     email: yup
       .string()
       .email(" Định dạng email chưa đúng")
       .required(" Vui lòng nhập email !"),
-    // password: yup
-    //   .string()
-    //   .required(" Vui lòng nhập mật khẩu !")
-    //   .min(4, " Mật khẩu từ 4-20 ký tự !")
-    //   .max(20, " Mật khẩu từ 4-20 ký tự !"),
-    // confirmPassword: yup
-    //   .string()
-    //   .required(" Vui lòng nhập xác nhận mật khẩu!")
-    //   .oneOf([yup.ref("password"), null], " Mật khẩu không khớp"),
   });
 
   const {
@@ -60,7 +36,8 @@ function AcountInfor() {
   const submitForm = (data) => {
     console.log("data", data);
     dispatch(updateUser(data));
-    setReLoad(!reload)
+
+    setReLoad(!reload);
   };
 
   const dispatch = useDispatch();
@@ -86,7 +63,7 @@ function AcountInfor() {
               <input
                 type={"text"}
                 className="name"
-                value={dataUser?.fullName}
+                defaultValue={dataUser?.fullName}
                 {...register("fullName")}
               />
             </div>
